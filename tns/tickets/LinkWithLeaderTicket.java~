@@ -1,0 +1,31 @@
+/*
+ * LinkWithLeaderTicket.java
+ *
+ * Created on March 18, 2003, 1:34 PM
+ */
+
+package tns.tickets;
+import tns.tickets.*;
+import tns.actions.*;
+import tns.agents.*;
+import tns.roles.*;
+import mil.navy.nps.relate.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class LinkWithLeaderTicket extends Ticket {
+    
+    /** 
+     * Creates a new instance of LinkWithLeaderTicket 
+     * @param role The role that owns this ticket.
+     */
+    public LinkWithLeaderTicket(Role role, Agent agent, Ticket ticket) {
+        super(role, "LinkWithLeaderTicket");
+        TerroristAgent ta = (TerroristAgent)((TNSRole)role).getAgent();
+        addFrame(new MakeDoubleLinkAction(ta, (TerroristAgent)agent));
+        addFrame(new InterruptTicketAction(ticket));
+    }
+    
+}

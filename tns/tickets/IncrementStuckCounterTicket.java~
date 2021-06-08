@@ -1,0 +1,26 @@
+/*
+ * IncrementStuckCounterTicket.java
+ *
+ * Created on March 14, 2003, 3:53 PM
+ */
+
+package tns.tickets;
+import mil.navy.nps.relate.*;
+import tns.actions.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class IncrementStuckCounterTicket extends Ticket {
+    
+    /** 
+     * Creates a new instance of IncrementStuckCounterTicket 
+     * @param role The role that owns this ticket.
+     */
+    public IncrementStuckCounterTicket(Role role) {
+        super(role, "IncrementStuckCounterTicket");
+        addFrame(new IncrementStuckCounterAction(role));
+    }
+    
+}

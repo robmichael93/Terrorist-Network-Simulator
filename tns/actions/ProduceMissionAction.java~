@@ -1,0 +1,32 @@
+/*
+ * ProduceTargetAction.java
+ *
+ * Created on March 2, 2003, 8:51 PM
+ */
+
+package tns.actions;
+import mil.navy.nps.relate.*;
+import tns.frames.*;
+import tns.agents.*;
+import tns.roles.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class ProduceMissionAction implements Frame {
+    
+    private Role role;
+    
+    /** Creates a new instance of ProduceTargetAction */
+    public ProduceMissionAction(Role role) {
+        this.role = role;
+    }
+    
+    public void execute() {
+        Target newTarget = new Target(role);
+        Mission newMission = new Mission(newTarget);
+        ((LeaderRole)role).assignMission(newMission);
+    }
+    
+}

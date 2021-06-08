@@ -1,0 +1,15 @@
+/*
+ * LinkListener.java
+ *
+ * Created on February 25, 2003, 10:38 AM
+ */
+
+package tns.graphics;
+
+/**
+ *
+ * @author  robmichael
+ */
+public interface LinkListener {
+    
+}

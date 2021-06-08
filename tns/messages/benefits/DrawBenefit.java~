@@ -1,0 +1,44 @@
+/*
+ * DrawBenefit.java
+ *
+ * Created on March 5, 2003, 9:51 AM
+ */
+
+package tns.messages.benefits;
+import tns.agents.*;
+import tns.roles.*;
+import mil.navy.nps.relate.*;
+import java.util.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class DrawBenefit implements Benefit {
+    
+    TerroristAgent agent;
+    
+    /** Creates a new instance of DrawBenefit */
+    public DrawBenefit(TerroristAgent agent) {
+        this.agent = agent;
+    }
+    
+    public Number calculate() {
+        int draw = 0;
+        Vector roles = agent.getRoleVector();
+        Iterator i = roles.iterator();
+        while (i.hasNext()) {
+            Role role = (Role)i.next();
+            if (role instanceof LeaderRole) {
+                Mission mission = ((LeaderRole)role).getMission();
+                if (mission != null) {
+                    Target target = mission.getTarget();
+                    draw = target.getDraw();
+                } // end if
+            } // end if
+        } // end while
+//        System.out.println("Draw Benefit: " + draw);
+        return new Integer(draw);
+    }
+    
+}

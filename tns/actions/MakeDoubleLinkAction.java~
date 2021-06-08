@@ -1,0 +1,51 @@
+/*
+ * MakeDoubleLinkAction.java
+ *
+ * Created on February 6, 2003, 2:35 PM
+ */
+
+package tns.actions;
+import tns.frames.*;
+import tns.agents.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class MakeDoubleLinkAction implements Frame {
+    
+    private TerroristAgent agent1;
+    private TerroristAgent agent2;
+    private String name;
+    
+    /** Creates a new instance of MakeDoubleLinkAction */
+    
+    public MakeDoubleLinkAction(TerroristAgent agent1) {
+        this.agent1 = agent1;
+        agent2 = null;
+        name = new String("MakeDoubleLinkAction");
+    }
+    
+    public MakeDoubleLinkAction(TerroristAgent agent1, TerroristAgent agent2) {
+        this(agent1);
+        this.agent2 = agent2;
+    }
+    
+    public void execute() {
+//        System.out.println(name + " executing...");
+        MentalMap myMentalMap = agent1.getMentalMap();
+        myMentalMap.addDirectlyLinkedAgent(agent2);
+        agent1.changeLink("add", agent1, agent2);
+        myMentalMap = agent2.getMentalMap();
+        myMentalMap.addDirectlyLinkedAgent(agent1);
+        agent2.changeLink("add", agent2, agent1);
+    } // end execute
+    
+    public void setAgent1(TerroristAgent agent1) {
+        this.agent1 = agent1;
+    } // end setToAgent
+    
+    public void setAgent2(TerroristAgent agent2) {
+        this.agent2 = agent2;
+    } // end setFromAgent
+}

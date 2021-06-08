@@ -1,0 +1,16 @@
+/*
+ * StateChangeListener.java
+ *
+ * Created on February 27, 2003, 8:56 AM
+ */
+
+package tns.util;
+
+/**
+ *
+ * @author  robmichael
+ */
+public interface StateChangeListener {
+    
+    public void StateChanged(StateChangeEvent sce);
+}

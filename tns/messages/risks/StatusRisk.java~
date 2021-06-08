@@ -1,0 +1,36 @@
+/*
+ * StatusRisk.java
+ *
+ * Created on March 5, 2003, 9:51 AM
+ */
+
+package tns.messages.risks;
+import mil.navy.nps.relate.*;
+import tns.agents.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class StatusRisk implements Risk {
+    
+    private TerroristAgent agent;
+    
+    /** Creates a new instance of StatusRisk */
+    public StatusRisk(TerroristAgent agent) {
+        this.agent = agent;
+    }
+    
+    /**
+     * Determines the value of the risk.
+     * @return Number The value of the risk.
+     */
+    public Number calculate() {
+        int experience = ((TerroristAgentPersonality)agent.getPersonality()).getExperience();
+        int influence = ((TerroristAgentPersonality)agent.getPersonality()).getInfluence();
+        int value = experience * influence;
+//        System.out.println("Status Risk: " + value);
+        return new Integer(value);
+    }
+    
+}

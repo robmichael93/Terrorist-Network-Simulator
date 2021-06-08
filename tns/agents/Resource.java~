@@ -1,0 +1,35 @@
+/*
+ * Resource.java
+ *
+ * Created on March 4, 2003, 7:58 AM
+ */
+
+package tns.agents;
+import mil.navy.nps.relate.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class Resource {
+    
+    private Role role;
+    private int level;
+    
+    /** Creates a new instance of Resource */
+    public Resource(Role role) {
+        this.role = role;
+        level = 0;
+    }
+    
+    public int getLevel() { return level; }
+    
+    public void updateLevel(int l) {
+        level += l;
+        if (l < 0) {
+//            System.out.println("\t\t\t\t\t\t\t\tResource reduced by " + (-l) + " units.");
+        } else {
+//            System.out.println("\t\t\t\t\t\t\t\tResource increased by " + l + " units.");
+        } // end if-else
+    } // end updateLevel
+}

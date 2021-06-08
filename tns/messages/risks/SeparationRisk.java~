@@ -1,0 +1,32 @@
+package tns.messages.risks;
+import tns.messages.*;
+
+/**
+ *
+ * @author  Rob Michael and Zac Staples
+ */
+public class SeparationRisk implements Risk {
+    
+    /**
+     * The message used for determining the amount of separation.
+     */
+    private Message message;
+    
+    /** 
+     * Creates a new instance of SeparationRisk 
+     * @param message The message used for determining the amount of separation.
+     */
+    public SeparationRisk(Message message) {
+        this.message = message;
+    } // end SeparationRisk constructor
+    
+    /**
+     * Determines the value of the risk.
+     * @return Number The value of the risk.
+     */
+    public Number calculate() {
+//        System.out.println("Separation Risk: " + message.getChain().size());
+        return new Integer(message.getChain().size());
+    } // end calculate
+    
+} // end class SeparationRisk

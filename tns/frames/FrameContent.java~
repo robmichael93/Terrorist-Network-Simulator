@@ -1,0 +1,17 @@
+/*
+ * FrameContent.java
+ *
+ * Created on February 6, 2003, 1:47 PM
+ */
+
+package tns.frames;
+
+/**
+ *
+ * @author  robmichael
+ */
+public interface FrameContent {
+    
+    void execute();
+    
+}

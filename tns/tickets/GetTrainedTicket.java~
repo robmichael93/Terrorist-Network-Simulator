@@ -1,0 +1,39 @@
+/*
+ * GetTrainedTicket.java
+ *
+ * Created on February 13, 2003, 11:58 PM
+ */
+
+package tns.tickets;
+import mil.navy.nps.relate.*;
+import tns.agents.*;
+import tns.roles.*;
+import tns.actions.*;
+import tns.goals.*;
+import java.util.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class GetTrainedTicket extends Ticket {
+    
+    /** 
+     * Creates a new instance of GetTrainedTicket 
+     * @param role The role that owns this ticket.
+     */
+    public GetTrainedTicket(Role role) {
+        super(role, "GetTrainedTicket");
+        TerroristAgent ta = (TerroristAgent)((TNSRole)role).getAgent();
+        addFrame(new MakeDoubleLinkAction(ta));
+        Vector goals = role.getGoalListVec();
+        Enumeration e = goals.elements();
+        while (e.hasMoreElements()) {
+            TNSGoal g = (TNSGoal)e.nextElement();
+            if (g instanceof MakeContactGoal) {
+                addFrame(new MarkGoalCompleteAction(g));
+            } // end if
+        } // end while
+    }
+    
+}

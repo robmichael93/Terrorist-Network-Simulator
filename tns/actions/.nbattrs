@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
+<attributes version="1.0">
+    <fileobject name="MarkGoalCompleteAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="MarkGoalCompleteAction"/>
+    </fileobject>
+    <fileobject name="ProduceMissionAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="ProduceMissionAction"/>
+    </fileobject>
+    <fileobject name="MissionCleanupAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="MissionCleanupAction"/>
+    </fileobject>
+    <fileobject name="ChangeRoleAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="ChangeRoleAction"/>
+    </fileobject>
+    <fileobject name="InterruptRequesterTicketAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="InterruptRequesterTicketAction"/>
+    </fileobject>
+    <fileobject name="ReceiveTargetAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="ReceiveTargetAction"/>
+    </fileobject>
+    <fileobject name="AddMessageChainToMentalMapAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="AddMessageChainToMentalMapAction"/>
+    </fileobject>
+    <fileobject name="SetRequestedLatchAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="SetRequestedLatchAction"/>
+    </fileobject>
+    <fileobject name="MakeDoubleLinkAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="MakeDoubleLinkAction"/>
+    </fileobject>
+    <fileobject name="TrainRecruitsAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="TrainRecruitsAction"/>
+    </fileobject>
+    <fileobject name="ResetStuckCounterAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="ResetStuckCounterAction"/>
+    </fileobject>
+    <fileobject name="ExecuteAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="ExecuteAction"/>
+    </fileobject>
+    <fileobject name="SetProvideLatchAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="SetProvideLatchAction"/>
+    </fileobject>
+    <fileobject name="StandardRewardAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="StandardRewardAction"/>
+    </fileobject>
+    <fileobject name="InterruptTicketAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="InterruptTicketAction"/>
+    </fileobject>
+    <fileobject name="IncrementStuckCounterAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="IncrementStuckCounterAction"/>
+    </fileobject>
+    <fileobject name="ExtendRetractConnectorAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="ExtendRetractConnectorAction"/>
+    </fileobject>
+    <fileobject name="ResetGetOperatorsStuckCounterAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="ResetGetOperatorsStuckCounterAction"/>
+    </fileobject>
+    <fileobject name="RehearseAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="RehearseAction"/>
+    </fileobject>
+    <fileobject name="InterruptJoinLeaderTicketAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="InterruptJoinLeaderTicketAction"/>
+    </fileobject>
+    <fileobject name="ResourceExchangeAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="ResourceExchangeAction"/>
+    </fileobject>
+    <fileobject name="ProduceResourceAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="ProduceResourceAction"/>
+    </fileobject>
+    <fileobject name="PutMessageInOutboxAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="PutMessageInOutboxAction"/>
+    </fileobject>
+    <fileobject name="IncrementProvideGoalWeightAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="IncrementProvideGoalWeightAction"/>
+    </fileobject>
+    <fileobject name="RecruitVerificationAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="RecruitVerificationAction"/>
+    </fileobject>
+    <fileobject name="UpdateChainHistoryValuesAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="UpdateChainHistoryValuesAction"/>
+    </fileobject>
+    <fileobject name="RemoveSelfFromMissionAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="RemoveSelfFromMissionAction"/>
+    </fileobject>
+    <fileobject name="IncrementGetOperatorsStuckCounterAction.java">
+        <attr name="class_dependency_tns.frames.Frame" stringvalue="IncrementGetOperatorsStuckCounterAction"/>
+    </fileobject>
+</attributes>

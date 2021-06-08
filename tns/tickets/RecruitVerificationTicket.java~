@@ -1,0 +1,26 @@
+/*
+ * RecruitVerificationTicket.java
+ *
+ * Created on February 14, 2003, 12:13 AM
+ */
+
+package tns.tickets;
+import mil.navy.nps.relate.*;
+import tns.actions.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class RecruitVerificationTicket extends Ticket {
+    
+    /** 
+     * Creates a new instance of RecruitVerificationTicket 
+     * @param role The role that owns this ticket.
+     */
+    public RecruitVerificationTicket(Role role) {
+        super(role, "RecruitVerificationTicket");
+        addFrame(new RecruitVerificationAction(role));
+    }
+    
+}

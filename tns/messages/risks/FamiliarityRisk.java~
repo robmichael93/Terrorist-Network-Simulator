@@ -1,0 +1,46 @@
+/*
+ * FamiliarityRisk.java
+ *
+ * Created on February 27, 2003, 9:17 PM
+ */
+
+package tns.messages.risks;
+import tns.agents.*;
+import java.util.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class FamiliarityRisk implements Risk {
+    
+    private TerroristAgent sender;
+    private TerroristAgent receiver;
+    
+    private static final int maximumRisk = 5;
+    
+    /** Creates a new instance of FamiliarityRisk */
+    public FamiliarityRisk(TerroristAgent sender, TerroristAgent receiver) {
+        this.sender = sender;
+        this.receiver = receiver;
+    }
+    
+    public Number calculate() {
+        Hashtable agentCommunications = sender.getAgentCommunications();
+        if (agentCommunications.get(receiver) == null) {
+//            System.out.println("Familiarity Risk: " + maximumRisk);
+            return new Integer(maximumRisk);
+        } else {
+            int communicationCount = ((Integer)agentCommunications.get(receiver)).intValue();
+            int risk = maximumRisk - communicationCount;
+            if (risk < 0) {
+//                System.out.println("Familiarity Risk: 0");
+                return new Integer(0);
+            } else {
+//                System.out.println("Familiarity Risk: " + risk);
+                return new Integer(risk);
+            } // end if-else
+        } // end if-else
+    } // end calculate
+    
+}

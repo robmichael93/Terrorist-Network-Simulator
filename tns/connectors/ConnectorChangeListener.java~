@@ -1,0 +1,16 @@
+/*
+ * ConnectorChangeListener.java
+ *
+ * Created on February 4, 2003, 8:38 AM
+ */
+
+package tns.connectors;
+
+/**
+ *
+ * @author  robmichael
+ */
+public interface ConnectorChangeListener {
+    
+   public void ConnectorChanged(ConnectorChangeEvent cce);    
+}

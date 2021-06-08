@@ -1,0 +1,23 @@
+/*
+ * ProduceTargetAction.java
+ *
+ * Created on March 2, 2003, 8:51 PM
+ */
+
+package tns.actions;
+import tns.frames.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class ProduceTargetAction implements Frame {
+    
+    /** Creates a new instance of ProduceTargetAction */
+    public ProduceTargetAction() {
+    }
+    
+    public void execute() {
+    }
+    
+}

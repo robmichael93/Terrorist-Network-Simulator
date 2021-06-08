@@ -1,0 +1,28 @@
+/*
+ * SetRequestResponseFlagAction.java
+ *
+ * Created on March 5, 2003, 8:27 AM
+ */
+
+package tns.actions;
+import tns.frames.*;
+import mil.navy.nps.relate.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class SetRequestResponseFlagAction implements Frame {
+    
+    private Role role;
+    
+    /** Creates a new instance of SetRequestResponseFlagAction */
+    public SetRequestResponseFlagAction(Role role) {
+        this.role = role;
+    }
+    
+    public void execute() {
+        
+    }
+    
+}

@@ -1,0 +1,52 @@
+/*
+ * GoalSynchronizationRisk.java
+ *
+ * Created on February 27, 2003, 9:18 PM
+ */
+
+package tns.messages.risks;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class GoalSynchronizationRisk implements Risk {
+    
+    /**
+     * A matrix of values for goal synchronization risk.  Column headings are
+     * the message types as defined in class Message.  Rows are the goal types
+     * as defined in interface TNSGoal.
+     */
+    private static int[][] goalMessageMatrix = {{5, 7, 1}, {7, 5, 1}, {15, 20, 20}, {20, 30, 30}};
+    
+    /**
+     * The goal type being compared.
+     */
+    private int goalType;
+    /**
+     * The message type being compared.
+     */
+    private int messageType;
+    
+    /** Creates a new instance of GoalSynchronizationRisk */
+    public GoalSynchronizationRisk(int goalType, int messageType) {
+        this.goalType = goalType;
+        this.messageType = messageType;
+    }
+    
+    /**
+     * Determines the value of the risk.
+     * @return Number The value of the risk.
+     */
+    public Number calculate() {
+        if (messageType > 2) {
+//            System.err.println("Unknown Message Type");
+            System.exit(1);
+            return null;
+        } else {
+//            System.out.println("Goal sync Risk: " + goalMessageMatrix[goalType][messageType]);
+            return new Integer(goalMessageMatrix[goalType][messageType]);
+        } // end if-else
+    }
+    
+}

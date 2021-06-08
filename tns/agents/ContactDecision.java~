@@ -1,0 +1,38 @@
+/*
+ * Decision.java
+ *
+ * Created on March 17, 2003, 2:24 PM
+ */
+
+package tns.agents;
+import simkit.random.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class ContactDecision {
+    
+    private static BinomialVariate decisionGenerator;
+    
+    /** Creates a new instance of Decision */
+    public ContactDecision(int recruiterInfluence, int contactAllegiance) {
+        if (decisionGenerator == null) {
+            decisionGenerator = new BinomialVariate();
+            decisionGenerator.getRandomNumber().setSeed(CongruentialSeeds.SEED[(int)(Math.random() * 10)]);
+        } // end if
+        double probability = 1.0 - ((double)contactAllegiance / (double)recruiterInfluence);
+        decisionGenerator.setParameters(new Object[] { new Integer(1), new Double(probability) });
+    }
+    
+    public boolean decide() {
+//        System.out.println("\t\t\t\t\t\t\t\t\t\t\tProbability: " + decisionGenerator.getProbability());
+        int decision = decisionGenerator.generateInt();
+//        System.out.println("\t\t\t\t\t\t\t\t\t\t\tDecision value: " + decision);
+        if (decision > 0) {
+            return true;
+        } else {
+            return false;
+        } // end if-else
+    } // end decide
+}

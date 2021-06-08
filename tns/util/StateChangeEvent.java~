@@ -1,0 +1,24 @@
+/*
+ * StateChangeEvent.java
+ *
+ * Created on February 27, 2003, 8:56 AM
+ */
+
+package tns.util;
+import mil.navy.nps.relate.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class StateChangeEvent {
+    
+    private Agent agent;
+    
+    /** Creates a new instance of StateChangeEvent */
+    public StateChangeEvent(Agent agent) {
+        this.agent = agent;
+    }
+    
+    public Agent getAgent() { return agent; }
+}

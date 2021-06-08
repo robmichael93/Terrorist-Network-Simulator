@@ -1,0 +1,37 @@
+/*
+ * FindContactsTicket.java
+ *
+ * Created on February 6, 2003, 9:18 PM
+ */
+
+package tns.tickets;
+import tns.agents.*;
+import tns.actions.*;
+import tns.roles.*;
+import tns.connectors.*;
+import mil.navy.nps.relate.*;
+import java.util.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class FindContactsTicket extends Ticket {
+    
+    /** 
+     * Creates a new instance of FindContactsTicket 
+     * @param role The role that owns this ticket.
+     */
+    public FindContactsTicket(Role role) {
+        super(role, "FindContactsTicket");
+        Vector connectors = ((TNSRole)role).getConnectors();
+        Enumeration e = connectors.elements();
+        while (e.hasMoreElements()) {
+            Connector c = (Connector)e.nextElement();
+            if (c instanceof FindContactConnector) {
+                addFrame(new ExtendRetractConnectorAction(c));
+            } // end if
+        } // end while
+    }
+    
+}

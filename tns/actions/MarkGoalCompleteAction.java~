@@ -1,0 +1,38 @@
+/*
+ * MarkGoalCompleteAction.java
+ *
+ * Created on February 6, 2003, 2:48 PM
+ */
+
+package tns.actions;
+import tns.frames.*;
+import tns.goals.*;
+import tns.roles.*;
+import tns.agents.*;
+import mil.navy.nps.relate.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class MarkGoalCompleteAction implements Frame {
+    
+    private TNSGoal goal;
+    private String name;
+    
+    /** Creates a new instance of MarkGoalCompleteAction */
+    public MarkGoalCompleteAction(TNSGoal goal) {
+        this.goal = goal;
+        name = new String("MarkGoalCompleteAction");
+    }
+    
+    public String getName() { return name; }
+    
+    public void execute() {
+//        System.out.println(name + " executing...");
+        goal.markGoalComplete();
+        TerroristAgent ta = (TerroristAgent)((TNSRole)((TNSGoal)goal).getRole()).getAgent();
+        ta.changeState(ta);
+    }
+    
+}

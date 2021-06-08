@@ -1,0 +1,19 @@
+/*
+ * SleepThread.java
+ *
+ * Created on March 10, 2003, 9:32 AM
+ */
+
+package tns.util;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class SleepThread {
+    
+    /** Creates a new instance of SleepThread */
+    public SleepThread() {
+    }
+    
+}

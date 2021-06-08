@@ -1,0 +1,14 @@
+package tns.util;
+
+/**
+ * This interface is used by classes that want to detect changes in the history
+ * of agent pairs.
+ * @author  Rob Michael and Zac Staples
+ */
+public interface HistoryChangeListener {
+    
+    /**
+     * 
+     */
+    public void HistoryChanged(HistoryChangeEvent hce);
+} // end interface HistoryChangeListener

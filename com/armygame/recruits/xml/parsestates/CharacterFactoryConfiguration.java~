@@ -1,0 +1,19 @@
+/*
+ * CharacterFactoryConfiguration.java
+ *
+ * Created on December 9, 2002, 10:29 AM
+ */
+
+package com.armygame.recruits.xml.parsestates;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class CharacterFactoryConfiguration {
+   
+   /** Creates a new instance of CharacterFactoryConfiguration */
+   public CharacterFactoryConfiguration() {
+   }
+   
+}

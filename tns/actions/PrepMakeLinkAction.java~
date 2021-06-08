@@ -1,0 +1,47 @@
+/*
+ * PrepMakeLinkAction.java
+ *
+ * Created on February 14, 2003, 12:07 AM
+ */
+
+package tns.actions;
+import tns.frames.*;
+import tns.tickets.*;
+import tns.actions.*;
+import tns.agents.*;
+import tns.roles.*;
+import mil.navy.nps.relate.*;
+import java.util.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class PrepMakeLinkAction implements Frame {
+    
+    private Agent agent;
+    private Role role;
+    
+    /** Creates a new instance of PrepMakeLinkAction */
+    public PrepMakeLinkAction(Role role, Agent agent) {
+        this.role = role;
+        this.agent = agent;
+    }
+    
+    public void execute() {
+        Vector tickets = ((TNSRole)role).getTickets();
+        Enumeration e = tickets.elements();
+        while (e.hasMoreElements()) {
+            Ticket t = (Ticket)e.nextElement();
+            Vector frames = t.getFrames();
+            Enumeration e2 = frames.elements();
+            while (e2.hasMoreElements()) {
+                Frame f = (Frame)e2.nextElement();
+                if (f instanceof MakeLinkAction) {
+                    ((MakeLinkAction)f).setToAgent((TerroristAgent)agent);
+                } // end if
+            } // end while
+        } // end while
+    }
+    
+}

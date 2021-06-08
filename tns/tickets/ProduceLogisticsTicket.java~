@@ -1,0 +1,28 @@
+/*
+ * ProduceLogisticsTicket.java
+ *
+ * Created on March 2, 2003, 8:47 PM
+ */
+
+package tns.tickets;
+import mil.navy.nps.relate.*;
+import tns.actions.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class ProduceLogisticsTicket extends Ticket {
+    
+    private Role role;
+    
+    /** 
+     * Creates a new instance of ProduceLogisticsTicket 
+     * @param role The role that owns this ticket.
+     */
+    public ProduceLogisticsTicket(Role role) {
+        super(role, "ProduceLogisticsTicket");
+        addFrame(new ProduceResourceAction(role, "Logistics"));
+    }
+    
+}

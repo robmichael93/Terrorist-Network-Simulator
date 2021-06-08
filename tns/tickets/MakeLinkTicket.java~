@@ -1,0 +1,39 @@
+/*
+ * ExtendConnectorTicket.java
+ *
+ * Created on February 12, 2003, 2:27 PM
+ */
+
+package tns.tickets;
+import tns.roles.*;
+import tns.agents.*;
+import tns.actions.*;
+import mil.navy.nps.relate.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class MakeLinkTicket extends Ticket {
+    
+    /** 
+     * Creates a new instance of ExtendConnectorTicket 
+     * @param role The role that owns this ticket.
+     */
+    public MakeLinkTicket(Role role) {
+        super(role, "MakeLinkTicket");
+        TerroristAgent ta = (TerroristAgent)((TNSRole)role).getAgent();
+        addFrame(new MakeDoubleLinkAction(ta));        
+    }
+    
+    /** 
+     * Creates a new instance of ExtendConnectorTicket 
+     * @param role The role that owns this ticket.
+     */
+    public MakeLinkTicket(Role role, Agent to) {
+        super(role, "MakeLinkTicket");
+        TerroristAgent from = (TerroristAgent)((TNSRole)role).getAgent();
+        addFrame(new MakeDoubleLinkAction(from, (TerroristAgent)to));
+    } 
+
+}

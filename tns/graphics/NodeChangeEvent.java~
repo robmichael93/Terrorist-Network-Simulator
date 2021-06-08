@@ -1,0 +1,28 @@
+/*
+ * NodeChangeEvent.java
+ *
+ * Created on February 27, 2003, 8:00 AM
+ */
+
+package tns.graphics;
+import mil.navy.nps.relate.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class NodeChangeEvent {
+    
+    private String type;
+    private Agent agent;
+    
+    /** Creates a new instance of NodeChangeEvent */
+    public NodeChangeEvent(String type, Agent agent) {
+        this.type = type;
+        this.agent = agent;
+    }
+    
+    public String getChangeType() { return type; }
+    
+    public Agent getAgent() { return agent; }
+}

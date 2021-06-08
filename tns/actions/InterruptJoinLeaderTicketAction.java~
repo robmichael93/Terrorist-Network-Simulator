@@ -1,0 +1,40 @@
+/*
+ * InterruptJoinLeaderTicketAction.java
+ *
+ * Created on March 10, 2003, 12:07 AM
+ */
+
+package tns.actions;
+import tns.frames.*;
+import tns.roles.*;
+import tns.tickets.*;
+import mil.navy.nps.relate.*;
+import java.util.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class InterruptJoinLeaderTicketAction implements Frame {
+    
+    private Role operator;
+    
+    /** Creates a new instance of InterruptJoinLeaderTicketAction */
+    public InterruptJoinLeaderTicketAction(Role operator) {
+        this.operator = operator;
+    }
+    
+    public void execute() {
+//        System.out.println("InterruptJoinLeaderTicketAction executing...");
+        Vector tickets = ((TNSRole)operator).getTickets();
+        Iterator i = tickets.iterator();
+        while (i.hasNext()) {
+            Ticket ticket = (Ticket)i.next();
+            if (ticket instanceof JoinLeaderTicket) {
+//                System.out.println("Stopping JoinLeaderTicket.");
+                ticket.stopExecution();
+            } // end if-else
+        } // end while
+    }
+    
+}

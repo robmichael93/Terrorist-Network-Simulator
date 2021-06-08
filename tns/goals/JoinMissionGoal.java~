@@ -1,0 +1,151 @@
+/*
+ * JoinMissionGoal.java
+ *
+ * Created on February 17, 2003, 3:39 PM
+ */
+
+package tns.goals;
+import tns.roles.*;
+import tns.rules.*;
+import tns.agents.*;
+import tns.tickets.*;
+import tns.relationships.*;
+import mil.navy.nps.relate.*;
+import java.util.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class JoinMissionGoal implements TNSGoal {
+    
+    private Role role;
+    private Vector ruleList;
+    private String goalName;
+    private int goalType;
+    private Rule activeRule;
+    private String relationshipName;
+    private int weight;
+    private boolean completed;
+
+    /** Creates a new instance of JoinMissionGoal */
+    public JoinMissionGoal(Role role) {
+        this.role = role;
+        goalName = new String("JoinMissionGoal");
+        System.out.println(goalName + " created.");
+        ruleList = new Vector();
+        relationshipName = new String("OrganizeMissionCellRelationship");
+        weight = 0;
+        completed = false;
+    }
+    
+    /** Adds the passed in Rule to the ruleList Vector.
+     * @param pRule: The Rule that is to be added
+     *
+     */
+    public void addRule(Rule pRule) {
+        ruleList.add(pRule);
+    }
+    
+    /** Assigns credit to itself (i.e. updates goal attainment weight )and the
+     * lastRule by receiving the new PerceivedEnvironment to the Goal and letting
+     * the Goal determine the credit assignment to itself (goal attainment) and
+     * all of the Rules associated with that Goal, both active and inactive.
+     * Assigns the Rule with the highest weight to the activeRule.
+     * @param pPE The agent's perceived environment.
+     *
+     */
+    public void assignCredit(SensedEnvironment pPE) {
+        weight = 1;
+        System.out.println(goalName + " weight: " + weight);
+    }
+    
+    public void executeActiveTicket() {
+    }
+    
+    /** Gets the Goal active rule
+     * @return the Goals active rule
+     *
+     */
+    public Rule getActiveRule() { return activeRule; }
+    
+    /** Gets the Goal name
+     * @return a String of the goals name (should be the goal class name)
+     *
+     */
+    public String getGoalName() { return goalName; }
+    
+    /** Gets the Goal type
+     * @return an Int representing the goal type
+     *
+     */
+    public int getGoalType() { return goalType; }
+    
+    public Number getGoalWeight() { return new Integer(weight); }
+    
+    /** Gets the Goal past active rule
+     * @return the Goals oast active rule
+     *
+     */
+    public Rule getPastActiveRule() { return null; }
+    
+    public Role getRole() { return role; }
+    
+    /** Returns the ruleList Vector.
+     * @return ruleList
+     *
+     */
+    public Vector getRuleList() { return ruleList; }
+    
+    public boolean isCompleted() { return completed; }
+    
+    public void markGoalComplete() {
+        completed = true;
+        System.out.println(goalName + " completed.");
+    }
+    
+    /** Removes the Rule from the ruleList Vector.
+     * @param pRule  The Rule that is to be removed
+     * @return The success of the removal operation:
+     * <li> true - The Rule was successfully removed
+     * <li> false - The Rule did not exist in the Goal's ruleList
+     *
+     */
+    public boolean removeRule(Rule pRule) {
+        return ruleList.remove(pRule);
+    }
+    
+    /** Passes the PerceivedEnvironment to the activeRule in its calculate()
+     * method.
+     * @return an Object associated with the active Rules calculation
+     *
+     */
+    public Object runActiveRule(SensedEnvironment pPE) {
+        return null;
+    }
+    
+    /** Sets the ActiveRule, used for goal attainment.
+     * @param pRule The agent's active rule.
+     *
+     */
+    public void setActiveRule(Rule pRule) {
+        activeRule = pRule;
+    }
+    
+    /** Sets the Goals type, the developer should designate specific goal types to
+     * be used in the RELATE architecture.
+     * @param pType Integer representing the goal type.
+     *
+     */
+    public void setGoalType(int pType) {
+        goalType = pType;
+    }
+    
+    /** Sets the PastActiveRule, used for comparison and rule weight calculation
+     * @param pRule The agent's past active rule.
+     *
+     */
+    public void setPastActiveRule(Rule pRule) {
+    }
+    
+}

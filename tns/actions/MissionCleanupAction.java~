@@ -1,0 +1,89 @@
+/*
+ * MissionCleanupAction.java
+ *
+ * Created on March 7, 2003, 10:12 AM
+ */
+
+package tns.actions;
+import tns.frames.*;
+import tns.tickets.*;
+import tns.roles.*;
+import tns.goals.*;
+import mil.navy.nps.relate.*;
+import java.util.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class MissionCleanupAction implements Frame {
+    
+    private Role role;
+    
+    /** Creates a new instance of MissionCleanupAction */
+    public MissionCleanupAction(Role role) {
+        this.role = role;
+    }
+    
+    public void execute() {
+        
+        if (role instanceof OperatorRole) {
+            Ticket rehearseMission = null;
+            Ticket executeMission = null;
+            Vector tickets = ((TNSRole)role).getTickets();
+            Iterator i = tickets.iterator();
+            while (i.hasNext()) {
+                Ticket ticket = (Ticket)i.next();
+                if (ticket instanceof RehearseMissionTicket) {
+                    rehearseMission = ticket;
+                } else if (ticket instanceof ExecuteMissionTicket) {
+                    executeMission = ticket;
+                } // end if-else
+            } // end while
+            tickets.remove(rehearseMission);
+            tickets.remove(executeMission);
+            tickets.add(new RehearseMissionTicket(role));
+            tickets.add(new ExecuteMissionTicket(role));
+            
+            Vector goals = ((TNSRole)role).getGoalListVec();
+            i = goals.iterator();
+            while (i.hasNext()) {
+                Goal goal = (Goal)i.next();
+                if (goal instanceof JoinLeaderGoal ||
+                    goal instanceof RehearseMissionGoal ||
+                    goal instanceof ExecuteMissionGoal) {
+                    ((TNSGoal)goal).resetGoal();
+                } // end if
+            } // end while
+            
+            ((OperatorRole)role).clearTarget();
+        } else if (role instanceof LeaderRole) {
+            Ticket leadRehearsal = null;
+            Ticket leadMission = null;
+            Vector tickets = ((TNSRole)role).getTickets();
+            Iterator i = tickets.iterator();
+            while (i.hasNext()) {
+                Ticket ticket = (Ticket)i.next();
+                if (ticket instanceof LeadRehearsalTicket) {
+                    leadRehearsal = ticket;
+                } else if (ticket instanceof LeadMissionTicket) {
+                    leadMission = ticket;
+                } // end if-else
+            } // end while
+            tickets.remove(leadRehearsal);
+            tickets.remove(leadMission);
+            tickets.add(new LeadRehearsalTicket(role));
+            tickets.add(new LeadMissionTicket(role));
+            
+            Vector goals = ((TNSRole)role).getGoalListVec();
+            i = goals.iterator();
+            while (i.hasNext()) {
+                Goal goal = (Goal)i.next();
+                ((TNSGoal)goal).resetGoal();
+            } // end while
+            
+            ((LeaderRole)role).clearMission();
+        } // end if-else
+    } // end execute
+    
+}

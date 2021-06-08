@@ -1,0 +1,19 @@
+/*
+ * Decision.java
+ *
+ * Created on March 17, 2003, 2:24 PM
+ */
+
+package tns.agents;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class Decision {
+    
+    /** Creates a new instance of Decision */
+    public Decision() {
+    }
+    
+}

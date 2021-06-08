@@ -1,0 +1,32 @@
+/*
+ * FindPersonTicket.java
+ *
+ * Created on February 21, 2003, 3:17 PM
+ */
+
+package tns.tickets;
+import tns.roles.*;
+import tns.agents.*;
+import tns.actions.*;
+import tns.messages.*;
+import mil.navy.nps.relate.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class FindPersonTicket extends Ticket {
+    
+    /** 
+     * Creates a new instance of FindPersonTicket 
+     * @param role The role that owns this ticket.
+     */
+    public FindPersonTicket(Role role, Agent to, Message message) {
+        super(role, "FindPersonTicket");
+        Agent from = (Agent)((TNSRole)role).getAgent();
+        addFrame(new MakeDoubleLinkAction((TerroristAgent)from, (TerroristAgent)to));
+        addFrame(new AddMessageChainToMentalMapAction(from, to, message));
+        addFrame(new UpdateChainHistoryValuesAction(message));
+    } 
+    
+}

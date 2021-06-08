@@ -1,0 +1,16 @@
+/*
+ * Benefit.java
+ *
+ * Created on February 27, 2003, 9:15 PM
+ */
+
+package tns.messages.benefits;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public interface Benefit {
+    
+    public Number calculate();
+}

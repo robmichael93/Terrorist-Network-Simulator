@@ -1,0 +1,32 @@
+/*
+ * GoalCompletionBenefit.java
+ *
+ * Created on March 9, 2003, 11:32 PM
+ */
+
+package tns.messages.benefits;
+import mil.navy.nps.relate.*;
+import tns.goals.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class GoalCompletionBenefit implements Benefit {
+    
+    private Goal goal;
+    
+    /** Creates a new instance of GoalCompletionBenefit */
+    public GoalCompletionBenefit(Goal goal) {
+        this.goal = goal;
+    }
+    
+    /**
+     * Determines the value of the benefit.
+     * @return Number The value of the benefit.
+     */
+    public Number calculate() {
+        return ((TNSGoal)goal).getGoalWeight();
+    }
+    
+}

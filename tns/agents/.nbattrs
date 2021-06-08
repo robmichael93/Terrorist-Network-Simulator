@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE attributes PUBLIC "-//NetBeans//DTD DefaultAttributes 1.0//EN" "http://www.netbeans.org/dtds/attributes-1_0.dtd">
+<attributes version="1.0">
+    <fileobject name="TerroristAgent.java">
+        <attr name="class_dependency_mil.navy.nps.relate.Agent" stringvalue="TerroristAgent"/>
+    </fileobject>
+    <fileobject name="SensedNetworkEnvironment.java">
+        <attr name="class_dependency_mil.navy.nps.relate.SensedEnvironment" stringvalue="SensedNetworkEnvironment"/>
+    </fileobject>
+    <fileobject name="MentalMap.java">
+        <attr name="class_dependency_mil.navy.nps.relate.SensedEnvironment" stringvalue="MentalMap"/>
+    </fileobject>
+    <fileobject name="TerroristAgentPersonality.java">
+        <attr name="class_dependency_mil.navy.nps.relate.Personality" stringvalue="TerroristAgentPersonality"/>
+    </fileobject>
+    <fileobject name="AgentNode.java">
+        <attr name="class_dependency_tns.util.StateChangeListener" stringvalue="AgentNode"/>
+        <attr name="class_dependency_com.touchgraph.graphlayout.Node" stringvalue="AgentNode"/>
+    </fileobject>
+</attributes>

@@ -1,0 +1,33 @@
+/*
+ * InfluenceBenefit.java
+ *
+ * Created on February 27, 2003, 9:16 PM
+ */
+
+package tns.messages.benefits;
+import tns.agents.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class InfluenceBenefit implements Benefit {
+    
+    private TerroristAgent agent;
+    
+    /** Creates a new instance of InfluenceBenefit */
+    public InfluenceBenefit(TerroristAgent agent) {
+        this.agent = agent;
+    }
+    
+    /**
+     * Determines the value of the benefit.
+     * @return Number The value of the benefit.
+     */
+    public Number calculate() {
+        int value = ((TerroristAgentPersonality)agent.getPersonality()).getInfluence();
+//        System.out.println("Influence Benefit: " + value);
+        return new Integer(value);
+    }
+    
+}

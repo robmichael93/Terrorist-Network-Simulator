@@ -1,0 +1,31 @@
+/*
+ * FindTrainersConnector.java
+ *
+ * Created on March 18, 2003, 11:38 AM
+ */
+
+package tns.connectors;
+import mil.navy.nps.relate.*;
+import tns.tickets.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class FindTrainerConnector extends Connector {
+    
+    private Ticket ticket;
+    
+    /** Creates a new instance of FindTrainersConnector */
+    public FindTrainerConnector(Role role) {
+        super(role, "FindTrainerConnector");
+        ticket = null;
+    }
+        
+    public void associateTicket(Ticket t) {
+        ticket = t;
+    } // end associateTicket
+    
+    public Ticket getTicket() { return ticket; }
+    
+}

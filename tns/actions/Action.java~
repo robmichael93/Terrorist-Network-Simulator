@@ -1,0 +1,20 @@
+/*
+ * Action.java
+ *
+ * Created on February 6, 2003, 1:47 PM
+ */
+
+package tns.actions;
+import tns.frames.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class Action extends Frame {
+    
+    /** Creates a new instance of Action */
+    public Action() {
+    }
+    
+}

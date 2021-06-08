@@ -1,0 +1,53 @@
+/*
+ * StandardRewardAction.java
+ *
+ * Created on March 13, 2003, 11:48 AM
+ */
+
+package tns.actions;
+import tns.frames.*;
+import tns.agents.*;
+import mil.navy.nps.relate.*;
+import simkit.random.*;
+/**
+ *
+ * @author  robmichael
+ */
+public class StandardRewardAction implements Frame {
+    
+    private Agent agent;
+    private int scalar;
+    
+    private static TriangleVariate rewardGenerator;
+    private static UniformVariate rng;
+
+    /** Creates a new instance of StandardRewardAction */
+    public StandardRewardAction(Agent agent, int scalar) {
+        this.agent = agent;
+        this.scalar = scalar;
+        if (rewardGenerator == null) {
+            rewardGenerator = new TriangleVariate();
+            rewardGenerator.setParameters(new Object[] {new Double(-1.0), new Double(1.0), new Double(0.5) });
+            rewardGenerator.getRandomNumber().setSeed(CongruentialSeeds.SEED[(int)(Math.random() * 10)]);
+        } // end if
+        if (rng == null) {
+            rng = new UniformVariate();
+            rng.setParameters(new Object[] {new Double(0.0), new Double(1.0) });
+            rng.getRandomNumber().setSeed(CongruentialSeeds.SEED[(int)(Math.random() * 10)]);
+        } // end if
+    }
+    
+    public void execute() {
+        TerroristAgentPersonality personality = (TerroristAgentPersonality)((TerroristAgent)agent).getPersonality();
+        for (int i = 0; i < scalar; i++) {
+            double random = rng.generate();
+            if (random < 0.5) {
+                personality.updateExperience(1);
+            } else {
+                personality.updateInfluence(1);
+            } // end if
+        } // end for
+        personality.updateAllegiance((int)Math.round(rewardGenerator.generate()));
+    }
+    
+}

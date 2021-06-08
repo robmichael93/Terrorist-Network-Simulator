@@ -1,0 +1,19 @@
+/*
+ * GLTNSUI.java
+ *
+ * Created on February 26, 2003, 3:09 PM
+ */
+
+package Templates.Classes;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class Class {
+    
+    /** Creates a new instance of GLTNSUI */
+    public Class() {
+    }
+    
+}

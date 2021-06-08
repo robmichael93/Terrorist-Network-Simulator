@@ -1,0 +1,30 @@
+/*
+ * RequestArmsConnector.java
+ *
+ * Created on March 2, 2003, 10:04 PM
+ */
+
+package tns.connectors;
+import mil.navy.nps.relate.*;
+import tns.tickets.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class RequestArmsConnector extends Connector {
+    
+    private Ticket ticket;
+    
+    /** Creates a new instance of RequestArmsConnector */
+    public RequestArmsConnector(Role role) {
+        super(role, "RequestArmsConnector");
+        ticket = null;
+    }
+        
+    public void associateTicket(Ticket t) {
+        ticket = t;
+    } // end associateTicket
+    
+    public Ticket getTicket() { return ticket; }
+}

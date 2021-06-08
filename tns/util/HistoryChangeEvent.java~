@@ -1,0 +1,28 @@
+/*
+ * HistoryChangeEvent.java
+ *
+ * Created on March 10, 2003, 4:19 PM
+ */
+
+package tns.util;
+import tns.agents.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class HistoryChangeEvent {
+    
+    private AgentPair agentPair;
+    private int amount;
+    
+    /** Creates a new instance of HistoryChangeEvent */
+    public HistoryChangeEvent(AgentPair agentPair, int amount) {
+        this.agentPair = agentPair;
+        this.amount = amount;
+    }
+ 
+    public AgentPair getAgentPair() { return agentPair; }
+    
+    public int getAmount() { return amount; }
+}

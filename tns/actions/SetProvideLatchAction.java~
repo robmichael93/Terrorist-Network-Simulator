@@ -1,0 +1,39 @@
+/*
+ * SetProvideLatchAction.java
+ *
+ * Created on March 5, 2003, 8:09 AM
+ */
+
+package tns.actions;
+import tns.frames.*;
+import tns.roles.*;
+import mil.navy.nps.relate.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class SetProvideLatchAction implements Frame {
+    
+    private Role role;
+    
+    /** Creates a new instance of SetProvideLatchAction */
+    public SetProvideLatchAction(Role role) {
+        this.role = role;
+    }
+    
+    public void execute() {
+//        System.out.println("SetProvideLatchAction executing");
+        if (role instanceof ArmsDealerRole) {
+            ((ArmsDealerRole)role).setProvidedArmsLatch();
+//            System.out.println("Provided Arms Latch: " + ((ArmsDealerRole)role).providedArms());
+        } else if (role instanceof FinancierRole) {
+            ((FinancierRole)role).setProvidedFinancesLatch();
+//            System.out.println("Provided Finances Latch: " + ((FinancierRole)role).providedFinances());
+        } else if (role instanceof LogisticianRole) {
+            ((LogisticianRole)role).setProvidedLogisticsLatch();
+//            System.out.println("Provided Logistics Latch: " + ((LogisticianRole)role).providedLogistics());
+        } // end if
+    }
+    
+}

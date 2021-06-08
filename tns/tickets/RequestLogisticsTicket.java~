@@ -1,0 +1,49 @@
+/*
+ * RequestLogisticsTicket.java
+ *
+ * Created on March 2, 2003, 8:44 PM
+ */
+
+package tns.tickets;
+import mil.navy.nps.relate.*;
+import tns.agents.*;
+import tns.actions.*;
+import tns.roles.*;
+import tns.connectors.*;
+import tns.messages.*;
+import java.util.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class RequestLogisticsTicket extends Ticket {
+    
+    /** 
+     * Creates a new instance of RequestLogisticsTicket 
+     * @param role The role that owns this ticket.
+     */
+    public RequestLogisticsTicket(Role role) {
+        super(role, "RequestLogisticsTicket", true);
+
+        addFrame(new IncrementStuckCounterAction(role));
+        Mission mission = ((LeaderRole)role).getMission();
+        if (!mission.hasNeededOperators()) {
+            addFrame(new IncrementGetOperatorsStuckCounterAction(role));
+        } // end if
+        Vector connectors = ((TNSRole)role).getConnectors();
+        Enumeration e = connectors.elements();
+        while (e.hasMoreElements()) {
+            Connector c = (Connector)e.nextElement();
+            if (c instanceof RequestLogisticsConnector) {
+                ((RequestLogisticsConnector)c).associateTicket(this);
+                addFrame(new ExtendRetractConnectorAction(c));
+            } // end if
+        } // end while
+        Agent leader = ((TNSRole)role).getAgent();
+        Class[] argumentTypes = {Agent.class, String.class, String.class, int.class};
+        Object[] arguments = {leader, "LogisticianRole", "GetResourceTicket", new Integer(Message.GET_RESOURCE_MESSAGE)};
+        addFrame(new PutMessageInOutboxAction(leader, "GetResourceMessage", argumentTypes, arguments));
+    }
+    
+}

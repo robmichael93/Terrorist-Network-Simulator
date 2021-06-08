@@ -1,0 +1,32 @@
+/*
+ * TNSRole.java
+ *
+ * Created on February 6, 2003, 8:38 PM
+ */
+
+package tns.roles;
+import tns.agents.*;
+import java.util.*;
+import mil.navy.nps.relate.*;
+import java.awt.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public interface TNSRole extends Role {
+    
+    public Agent getAgent();
+ 
+    public Vector getConnectors();
+    
+    public Vector getTickets();
+    
+    public Vector getRelationships();
+    
+    public String getSymbol();
+    
+    public Color getBackgroundColor();
+    
+    public Color getTextColor();
+}

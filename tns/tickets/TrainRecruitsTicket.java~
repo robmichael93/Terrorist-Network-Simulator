@@ -1,0 +1,26 @@
+/*
+ * TrainRecruitsTicket.java
+ *
+ * Created on February 17, 2003, 2:11 PM
+ */
+
+package tns.tickets;
+import tns.actions.*;
+import mil.navy.nps.relate.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class TrainRecruitsTicket extends Ticket {
+    
+    /** 
+     * Creates a new instance of TrainRecruitsTicket 
+     * @param role The role that owns this ticket.
+     */
+    public TrainRecruitsTicket(Role role) {
+        super(role, "TrainRecruitsTicket");
+        addFrame(new TrainRecruitsAction(role));
+    }
+    
+}

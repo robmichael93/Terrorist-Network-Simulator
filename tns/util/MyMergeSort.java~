@@ -1,0 +1,22 @@
+/*
+ * MyMergeSort.java
+ *
+ * Created on February 21, 2003, 2:51 PM
+ */
+
+package tns.util;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class MyMergeSort extends MergeSort {
+    
+    /** Creates a new instance of MyMergeSort */
+    public MyMergeSort() {
+    }
+    
+    public int compareElementsAt(int beginLoc, int endLoc) {
+    }
+    
+}

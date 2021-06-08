@@ -1,0 +1,39 @@
+/*
+ * SetRequestedLatchAction.java
+ *
+ * Created on March 5, 2003, 9:46 AM
+ */
+
+package tns.actions;
+import tns.frames.*;
+import tns.roles.*;
+import mil.navy.nps.relate.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class SetRequestedLatchAction implements Frame {
+    
+    private Role role;
+    
+    /** Creates a new instance of SetRequestedLatchAction */
+    public SetRequestedLatchAction(Role role) {
+        this.role = role;
+    }
+    
+    public void execute() {
+//        System.out.println("SetRequestedLatchAction executing");
+        if (role instanceof ArmsDealerRole) {
+            ((ArmsDealerRole)role).setArmsRequestedLatch();
+//            System.out.println("Requested Arms Latch: " + ((ArmsDealerRole)role).armsRequested());
+        } else if (role instanceof FinancierRole) {
+            ((FinancierRole)role).setFinancesRequestedLatch();
+//            System.out.println("Requested Finances Latch: " + ((FinancierRole)role).financesRequested());
+        } else if (role instanceof LogisticianRole) {
+            ((LogisticianRole)role).setLogisticsRequestedLatch();
+//            System.out.println("Requested Logistics Latch: " + ((LogisticianRole)role).logisticsRequested());
+        } // end if
+    }
+    
+}

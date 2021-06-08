@@ -1,0 +1,18 @@
+/*
+ * TNSRelationship.java
+ *
+ * Created on March 11, 2003, 3:21 PM
+ */
+
+package tns.relationships;
+import mil.navy.nps.relate.*;
+import java.util.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public interface TNSRelationship extends Relationship {
+    
+    public Vector getAssociatedRoles();
+}

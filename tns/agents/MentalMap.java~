@@ -1,0 +1,151 @@
+/*
+ * MentalMap.java
+ *
+ * Created on February 4, 2003, 10:23 PM
+ */
+
+package tns.agents;
+import mil.navy.nps.relate.*;
+import com.touchgraph.graphlayout.graphelements.*;
+import com.touchgraph.graphlayout.*;
+import java.util.*;
+import tns.util.*;
+import tns.agents.*;
+import tns.graphics.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class MentalMap implements SensedEnvironment {
+    
+    private Agent agent;
+    private Vector knownAgents;
+    private Vector directlyLinkedAgents;
+    private SubNet subNet;
+    private Vector nodeListeners;
+    
+    /** Creates a new instance of MentalMap */
+    public MentalMap(Agent agent) {
+        this.agent = agent;
+//        System.out.println("MentalMap created.");
+        knownAgents = new Vector();
+        directlyLinkedAgents = new Vector();
+        subNet = new SubNet();
+        nodeListeners = new Vector();
+    }
+    
+    /** Vector containing all sensed agents.  This is used by the relationshipManager
+     * in checking for new or formed relationships.
+     * @return  A vector containing all currently sensed agents.
+     *
+     */
+    public Vector getSensedAgents() { return directlyLinkedAgents; }
+    
+    /** Returns an Object that contains all required elements of the
+     * SensedEnvironment.  This method puts all of the various elements
+     * of the PerceivedEnvironment into an appropriate Object using
+     * getter-methods.
+     * @return  A SensedEnvironment object.
+     *
+     */
+    public SensedEnvironment getSensedEnvironment() { return this; }
+    
+    public Vector getDirectlyLinkedAgents() { return directlyLinkedAgents; }
+    
+    public Vector getKnownAgents() { return knownAgents; }
+    
+    public SubNet getSubNet() { return subNet; }
+    
+    public void addKnownAgent(Agent from, Agent a) {
+//        System.out.println(a.getAgentName() + " added as known agent.");
+        knownAgents.add(a);
+        AgentPair addPair = new AgentPair(from, a);
+        subNet.addPair(addPair);
+        changeNode("add", a);
+    } // end addKnownAgent
+    
+    public void addDirectlyLinkedAgent(Agent a) {
+        if (!directlyLinkedAgents.contains(a)) {
+            directlyLinkedAgents.add(a);
+//            System.out.println(a.getAgentName() + " added as directly linked agent of " + agent.getEntityName());
+            AgentPair addPair = new AgentPair(agent, a);
+            subNet.addPair(addPair);
+            if (!knownAgents.contains(a)) {
+                knownAgents.add(a);
+                changeNode("add", a);
+            } // end if
+        } // end if
+    } // end addDirectlyLinkedAgent
+    
+    
+    public void removeDirectlyLinkedAgent(Agent a) {
+        if (directlyLinkedAgents.remove(a)) { // only continue if agent successfully removed
+            AgentPair removePair = new AgentPair(agent, a);
+//            System.out.println(agent.getEntityName() + "'s MentalMap removing pair from " + agent.getEntityName() + " to " + a.getEntityName());
+            subNet.removePair(removePair);
+            Hashtable agentCommunications = ((TerroristAgent)agent).getAgentCommunications();
+            agentCommunications.remove(a);
+//            System.out.println(a.getAgentName() + " removed as directly linked agent of " + agent.getEntityName());
+            
+            // Remove Agent a from all relationships that this agent and Agent a have together
+            Hashtable relationshipTable = agent.getRelationshipTable();
+            Enumeration e = relationshipTable.keys();
+            while (e.hasMoreElements()) {
+                String relationshipName = (String)e.nextElement();
+                Object removeRelationships = relationshipTable.get(relationshipName);
+                if (removeRelationships instanceof Vector) {
+                    Enumeration e2 = ((Vector)removeRelationships).elements();
+                    while (e2.hasMoreElements()) {
+                        Relationship removeRelationship = (Relationship)e2.nextElement();
+                        if (removeRelationship.getMembers().contains(a)) {
+                            removeRelationship.removeAgent(a);
+                        } // end if
+                    } // end while
+                } // end if
+            } // end while
+        } // end if
+        boolean foundAnotherEdge = false;
+        Vector subNetEdges = subNet.getUniquePairs();
+        Iterator i = subNetEdges.iterator();
+        while (i.hasNext()) {
+            AgentPair agentPair = (AgentPair)i.next();
+            if (agentPair.contains(a)) {
+                foundAnotherEdge = true;
+            } // end if
+        } // end while
+        if (!foundAnotherEdge) {
+//            System.out.println(a.getAgentName() + " removed entirely from " + agent.getEntityName() + "'s MentalMap");
+            knownAgents.remove(a);
+            changeNode("remove", a);
+        } // end if
+    } // end removeDirectlyLinkedAgent
+    
+    public boolean addNodeChangeListener(NodeChangeListener v) {
+        if (nodeListeners.contains(v)) {
+         return false;
+        } // end if
+        nodeListeners.add(v);
+//        System.out.println("NodeChangeListener added.");
+        return true;
+    } // end addLinkChangeListener
+
+    public boolean removeNodeChangeListener(NodeChangeListener v) {
+        boolean removed = nodeListeners.remove(v);
+        if (removed) {
+//            System.out.println("NodeChangeListener removed.");
+            return true;
+        } else {
+            return false;
+        } // end if-else
+    } // end removeLinkChangeListener
+
+    public void changeNode(String type, Agent agent) {
+        // notify listeners of status change
+        Enumeration enum = nodeListeners.elements();
+        while (enum.hasMoreElements()) {
+            NodeChangeListener ncl = (NodeChangeListener) enum.nextElement();
+            ncl.NodeChanged(new NodeChangeEvent(type, agent));
+        } // end while
+    } // end changeLink
+}

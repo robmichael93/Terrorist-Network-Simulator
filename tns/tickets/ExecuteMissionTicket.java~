@@ -1,0 +1,25 @@
+/*
+ * ExecuteMissionTicket.java
+ *
+ * Created on March 3, 2003, 9:17 AM
+ */
+
+package tns.tickets;
+import tns.actions.*;
+import mil.navy.nps.relate.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class ExecuteMissionTicket extends Ticket {
+    
+    /** * Creates a new instance of ExecuteMissionTicket 
+     * @param role The role that owns this ticket.
+     */
+    public ExecuteMissionTicket(Role role) {
+        super(role, "ExecuteMissionTicket");
+        addFrame(new ExecuteAction(role));
+    }
+    
+}

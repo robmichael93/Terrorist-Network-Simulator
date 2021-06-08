@@ -1,0 +1,34 @@
+/*
+ * GetTrainedConnector.java
+ *
+ * Created on February 7, 2003, 2:25 PM
+ */
+
+package tns.connectors;
+import mil.navy.nps.relate.*;
+import java.util.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class GetTrainedConnector extends Connector {
+    
+    private int risk;
+    /** Creates a new instance of GetTrainedConnector */
+    public GetTrainedConnector(Role role) {
+        super(role, "GetTrainedConnector");
+        risk = 0;
+    }
+        
+    public void setRisk(int r) {
+        risk = r;
+    } // end setRisk
+    
+    public int getRisk() { return risk; }
+
+    public void updateRisk (int r) {
+        risk += r;
+    } // end updateRisk
+    
+}

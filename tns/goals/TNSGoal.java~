@@ -1,0 +1,45 @@
+package tns.goals;
+import mil.navy.nps.relate.*;
+
+/**
+ * This interface extends the RELATE architecture's Goal interface to provide
+ * functionality specific to the TNS.
+ * @author  Rob Michael and Zac Staples
+ */
+public interface TNSGoal extends Goal {
+
+    /**
+     * An indentifier for goals in the organizing phase of a story template.
+     */
+    public static final int ORGANIZE = 0;
+    /**
+     * An indentifier for goals in the planning phase of a story template.
+     */
+    public static final int PLAN = 1;
+    /**
+     * An indentifier for goals in the training and rehearsal phase of a 
+     * story template.
+     */
+    public static final int TRAIN = 2;
+    /**
+     * An indentifier for goals in the execution phase of a story template.
+     */
+    public static final int EXECUTE = 3;
+    
+    /**
+     * Returns the weight of the goal.
+     * @return Number The weight of the goal.
+     */
+    public Number getGoalWeight();
+ 
+    public Role getRole();
+    
+    public boolean isCompleted();
+    
+    public void markGoalComplete();
+    
+    public void resetGoal();
+    
+    public void executeActiveTicket();
+
+}

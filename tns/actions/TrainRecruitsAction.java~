@@ -1,0 +1,58 @@
+/*
+ * TrainRecruitsAction.java
+ *
+ * Created on February 17, 2003, 2:12 PM
+ */
+
+package tns.actions;
+import tns.frames.*;
+import tns.agents.*;
+import tns.roles.*;
+import tns.goals.*;
+import tns.relationships.*;
+import tns.tickets.*;
+import mil.navy.nps.relate.*;
+import java.util.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class TrainRecruitsAction implements Frame {
+    
+    private Role role;
+    
+    /** Creates a new instance of TrainRecruitsAction */
+    public TrainRecruitsAction(Role role) {
+        this.role = role;
+    }
+    
+    public void execute() {
+        TerroristAgent ta = (TerroristAgent)((TNSRole)role).getAgent();
+        ((TerroristAgentPersonality)ta.getPersonality()).updateExperience(1);
+//        System.out.println(ta.getEntityName() + "'s Experience increased by 1.");
+        // Get the ProveAllegiance threshold from the RecruitTrainingRelationship object
+        int threshold = 0;
+        Hashtable relationshipTable = ta.getRelationshipTable();
+        Vector relationships = (Vector)relationshipTable.get("RecruitTrainingRelationship");
+        if (relationships instanceof Vector &&
+            ((Vector)relationships).size() > 0 &&
+            ((Vector)relationships).firstElement() instanceof RecruitTrainingRelationship) {
+            threshold = ((RecruitTrainingRelationship)((Vector)relationships).firstElement()).getProveAllegianceThreshold();
+        } // end if
+        // if the new Allegiance value is above the ProveAllegiance
+        // threshold, then mark the goal complete
+        if (((TerroristAgentPersonality)ta.getPersonality()).getExperience() >= threshold) {
+            Vector tickets = ((TNSRole)role).getTickets();
+            Enumeration e = tickets.elements();
+            while (e.hasMoreElements()) {
+                Ticket t = (Ticket)e.nextElement();
+                if (t instanceof BecomeOperatorTicket) {
+                    t.addFrame(new MarkGoalCompleteAction((TNSGoal)ta.getGoalList().get("BecomeOperatorGoal")));
+                    t.addFrame(new ChangeRoleAction(role, "OperatorRole"));
+                } // end if
+            } // end while
+        } // end if
+    }
+    
+}

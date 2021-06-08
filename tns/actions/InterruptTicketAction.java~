@@ -1,0 +1,28 @@
+/*
+ * InterruptTicketAction.java
+ *
+ * Created on February 11, 2003, 4:13 PM
+ */
+
+package tns.actions;
+import tns.frames.*;
+import tns.tickets.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class InterruptTicketAction implements Frame {
+    
+    private Ticket ticket;
+    
+    /** Creates a new instance of InterruptTicketAction */
+    public InterruptTicketAction(Ticket ticket) {
+        this.ticket = ticket;
+    }
+    
+    public void execute() {
+        ticket.stopExecution();
+    }
+    
+}

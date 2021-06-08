@@ -1,0 +1,44 @@
+package tns.actions;
+import tns.frames.*;
+import tns.roles.*;
+import tns.tickets.*;
+import mil.navy.nps.relate.*;
+import java.util.*;
+
+/**
+ * This action interrupts the associated ticket the leader is using to
+ * request a resource.  This action prevents a message being sent out by
+ * the leader searching for a resource provider.
+ * @author  robmichael
+ */
+public class InterruptRequesterTicketAction implements Frame {
+    
+    private Role requester;
+    private Role provider;
+    
+    /** Creates a new instance of SetRequestResponseFlagAction */
+    public InterruptRequesterTicketAction(Role requester, Role provider) {
+        this.requester = requester;
+        this.provider = provider;
+    }
+    
+    public void execute() {
+//        System.out.println("InterruptRequesterTicketAction executing...");
+        Vector tickets = ((TNSRole)requester).getTickets();
+        Iterator i = tickets.iterator();
+        while (i.hasNext()) {
+            Ticket ticket = (Ticket)i.next();
+            if (provider instanceof ArmsDealerRole && ticket instanceof RequestArmsTicket) {
+//                System.out.println("Stopping RequestArmsTicket.");
+                ticket.stopExecution();
+            } else if (provider instanceof FinancierRole && ticket instanceof RequestFinancesTicket) {
+//                System.out.println("Stopping RequestFinancesTicket.");
+                ticket.stopExecution();
+            } else if (provider instanceof LogisticianRole && ticket instanceof RequestLogisticsTicket) {
+//                System.out.println("Stopping RequestLogisticsTicket.");
+                ticket.stopExecution();
+            } // end if-else
+        } // end while
+    }
+    
+}

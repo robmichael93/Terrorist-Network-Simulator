@@ -1,0 +1,32 @@
+/*
+ * LinkChangeEvent.java
+ *
+ * Created on February 25, 2003, 10:42 AM
+ */
+
+package tns.graphics;
+import mil.navy.nps.relate.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class LinkChangeEvent {
+    
+    private String type;
+    private Agent agent1;
+    private Agent agent2;
+    
+    /** Creates a new instance of LinkChangeEvent */
+    public LinkChangeEvent(String type, Agent agent1, Agent agent2) {
+        this.type = type;
+        this.agent1 = agent1;
+        this.agent2 = agent2;
+    }
+    
+    public String getChangeType() { return type; }
+    
+    public Agent getAgent1() { return agent1; }
+    
+    public Agent getAgent2() { return agent2; }
+}

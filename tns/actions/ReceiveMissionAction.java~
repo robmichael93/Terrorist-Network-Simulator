@@ -1,0 +1,30 @@
+/*
+ * ReceiveMissionAction.java
+ *
+ * Created on March 3, 2003, 8:55 AM
+ */
+
+package tns.actions;
+import tns.frames.*;
+import mil.navy.nps.relate.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class ReceiveMissionAction implements Frame {
+    
+    private Role leader;
+    private Role operator;
+    
+    /** Creates a new instance of ReceiveMissionAction */
+    public ReceiveMissionAction(Role leader, Role operator) {
+        this.leader = leader;
+        this.operator = operator;
+    }
+    
+    public void execute() {
+        ((OperatorRole)operator).assignTarget(((LeaderRole)leader).getMission().getTarget());
+    }
+    
+}

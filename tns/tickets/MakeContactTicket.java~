@@ -1,0 +1,58 @@
+/*
+ * MakeContactTicket.java
+ *
+ * Created on February 6, 2003, 8:53 PM
+ */
+
+package tns.tickets;
+import mil.navy.nps.relate.*;
+import tns.agents.*;
+import tns.roles.*;
+import tns.actions.*;
+import tns.goals.*;
+import java.util.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class MakeContactTicket extends Ticket {
+    
+    /** 
+     * Creates a new instance of MakeContactTicket 
+     * @param role The role that owns this ticket.
+     */
+    public MakeContactTicket(Role role) {
+        super(role, "MakeContactTicket");
+        TerroristAgent ta = (TerroristAgent)((TNSRole)role).getAgent();
+        addFrame(new ResetStuckCounterAction(role));
+        addFrame(new MakeDoubleLinkAction(ta));
+        Vector goals = role.getGoalListVec();
+        Enumeration e = goals.elements();
+        while (e.hasMoreElements()) {
+            TNSGoal g = (TNSGoal)e.nextElement();
+            if (g instanceof MakeContactGoal) {
+                addFrame(new MarkGoalCompleteAction(g));
+            } // end if
+        } // end while
+    }
+    
+    /** 
+     * Creates a new instance of MakeContactTicket 
+     * @param role The role that owns this ticket.
+     */
+    public MakeContactTicket(Role role, Agent agent) {
+        super(role, "MakeContactTicket");
+        TerroristAgent ta = (TerroristAgent)((TNSRole)role).getAgent();
+        addFrame(new ResetStuckCounterAction(role));
+        addFrame(new MakeDoubleLinkAction(ta, (TerroristAgent)agent));
+        Vector goals = role.getGoalListVec();
+        Enumeration e = goals.elements();
+        while (e.hasMoreElements()) {
+            TNSGoal g = (TNSGoal)e.nextElement();
+            if (g instanceof MakeContactGoal) {
+                addFrame(new MarkGoalCompleteAction(g));
+            } // end if
+        } // end while
+    }
+}

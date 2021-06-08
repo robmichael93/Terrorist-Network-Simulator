@@ -1,0 +1,16 @@
+/*
+ * Risk.java
+ *
+ * Created on February 27, 2003, 9:17 PM
+ */
+
+package tns.messages.risks;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public interface Risk {
+    
+    public Number calculate();
+}

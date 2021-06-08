@@ -1,0 +1,28 @@
+/*
+ * ProduceFinancesTicket.java
+ *
+ * Created on March 2, 2003, 8:46 PM
+ */
+
+package tns.tickets;
+import mil.navy.nps.relate.*;
+import tns.actions.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class ProduceFinancesTicket extends Ticket {
+    
+    private Role role;
+    
+    /** 
+     * Creates a new instance of ProduceFinancesTicket 
+     * @param role The role that owns this ticket.
+     */
+    public ProduceFinancesTicket(Role role) {
+        super(role, "ProduceFinancesTicket");
+        addFrame(new ProduceResourceAction(role, "Finances"));
+    }
+    
+}

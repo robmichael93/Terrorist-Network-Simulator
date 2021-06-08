@@ -1,0 +1,38 @@
+package tns.util;
+import mil.navy.nps.relate.*;
+import tns.messages.*;
+import java.util.*;
+
+/**
+ *
+ * @author  Rob Michael and Zac Staples
+ */
+public class Inbox {
+    
+    private Agent agent;
+    private Vector messageQueue;
+    
+    /** Creates a new instance of Inbox */
+    public Inbox(Agent agent) {
+        this.agent = agent;
+        messageQueue = new Vector();
+    }
+    
+    public boolean addMessage(Message m) {
+//        System.out.println("Adding message " + m.toString() + " added to " + agent.getEntityName() + "'s inbox.");
+        return messageQueue.add(m);
+    } // end addMessage
+    
+    public void process() {
+//        System.out.println(agent.getEntityName() + " processing inbox...");
+        if (messageQueue.size() > 0) {
+            Iterator i = messageQueue.iterator();
+            while (i.hasNext()) {
+                Message message = (Message)i.next();
+                message.process(agent);
+                i.remove();
+            } // end while
+        } // end if
+    }
+    
+}

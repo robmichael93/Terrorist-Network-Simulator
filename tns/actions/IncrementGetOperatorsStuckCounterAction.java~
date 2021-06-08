@@ -1,0 +1,29 @@
+/*
+ * IncrementGetOperatorsStuckCounterAction.java
+ *
+ * Created on March 18, 2003, 11:59 AM
+ */
+
+package tns.actions;
+import tns.frames.*;
+import tns.roles.*;
+import mil.navy.nps.relate.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class IncrementGetOperatorsStuckCounterAction implements Frame {
+    
+    private Role role;
+    
+    /** Creates a new instance of IncrementGetOperatorsStuckCounterAction */
+    public IncrementGetOperatorsStuckCounterAction(Role role) {
+        this.role = role;
+    }
+    
+    public void execute() {
+        ((LeaderRole)role).incrementGetOperatorsStuckCounter();
+    }
+    
+}

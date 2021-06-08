@@ -1,0 +1,28 @@
+/*
+ * GetOperatorsTicket.java
+ *
+ * Created on March 2, 2003, 10:18 PM
+ */
+
+package tns.tickets;
+import mil.navy.nps.relate.*;
+import tns.actions.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class GetOperatorsTicket extends Ticket {
+    
+    private Role role;
+    
+    /** 
+     * Creates a new instance of GetOperatorsTicket 
+     * @param role The role that owns this ticket.
+     */
+    public GetOperatorsTicket(Role role) {
+        super(role, "GetOperatorsTicket");
+        addFrame(new IncrementGetOperatorsStuckCounterAction(role));
+    }
+    
+}

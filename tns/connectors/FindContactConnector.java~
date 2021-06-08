@@ -1,0 +1,29 @@
+package tns.connectors;
+import mil.navy.nps.relate.*;
+import java.util.*;
+
+/**
+ * Recruiters extend this connector so that contacts can connect with it and 
+ * make a decision to join the organization or turn the offer down.
+ * @author  Rob Michael and Zac Staples
+ */
+public class FindContactConnector extends Connector {
+    
+    private int risk;
+    /** Creates a new instance of FindContactConnector */
+    public FindContactConnector(Role role) {
+        super(role, "FindContactConnector");
+        risk = 0;
+    }
+    
+    public void setRisk(int r) {
+        risk = r;
+    } // end setRisk
+    
+    public int getRisk() { return risk; }
+
+    public void updateRisk (int r) {
+        risk += r;
+    } // end updateRisk
+    
+}

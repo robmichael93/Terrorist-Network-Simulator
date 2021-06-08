@@ -1,0 +1,18 @@
+/*
+ * TNSSensor.java
+ *
+ * Created on March 13, 2003, 2:32 PM
+ */
+
+package tns.sensors;
+import mil.navy.nps.relate.*;
+import java.util.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public interface TNSSensor extends Sensor {
+    
+    public Vector findSensedAgents(Agent sensingAgent, Vector agents);
+}

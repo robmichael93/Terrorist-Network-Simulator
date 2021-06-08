@@ -1,0 +1,19 @@
+/*
+ * SendOperatorsToLeadersTicket.java
+ *
+ * Created on March 2, 2003, 8:41 PM
+ */
+
+package tns.tickets;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class SendOperatorsToLeadersTicket extends Ticket {
+    
+    /** Creates a new instance of SendOperatorsToLeadersTicket */
+    public SendOperatorsToLeadersTicket() {
+    }
+    
+}

@@ -1,0 +1,174 @@
+/*
+ * ContactLeadersGoal.java
+ *
+ * Created on March 13, 2003, 2:55 PM
+ */
+
+package tns.goals;
+import tns.roles.*;
+import tns.agents.*;
+import mil.navy.nps.relate.*;
+import java.util.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class ContactLeadersGoal implements TNSGoal {
+    
+    private Role role;
+    private Vector ruleList;
+    private String goalName;
+    private int goalType;
+    private Rule activeRule;
+    private String relationshipName;
+    private int weight;
+    private boolean completed;
+    
+    /** Creates a new instance of ContactLeadersGoal */
+    public ContactLeadersGoal(Role role) {
+        this.role = role;
+        goalName = new String("ContactLeadersGoal");
+        ruleList = new Vector();
+        relationshipName = new String("OperatorRecruitingRelationship");
+        weight = 0;
+        completed = false;
+        goalType = TNSGoal.ORGANIZE;
+    }
+    
+    /** Adds the passed in Rule to the ruleList Vector. <B>Not used in the TNS.</B>
+     * @param pRule The Rule that is to be added
+     */
+    public void addRule(Rule pRule) {
+        ruleList.add(pRule);
+    }
+    
+    /** Assigns credit to itself (i.e. updates goal attainment weight )and the
+     * lastRule by receiving the new PerceivedEnvironment to the Goal and letting
+     * the Goal determine the credit assignment to itself (goal attainment) and
+     * all of the Rules associated with that Goal, both active and inactive.
+     * Assigns the Rule with the highest weight to the activeRule.
+     * @param pPE The agent's perceived environment.
+     *
+     */
+    public void assignCredit(SensedEnvironment pPE) {
+        // Points are given to this goal for each Contact that is sensed,
+        // but not directly linked to the Agent who has this goal
+        int leaders = 0;
+        Vector sensedAgents = pPE.getSensedAgents();
+        Vector knownAgents = ((TerroristAgent)((TNSRole)role).getAgent()).getMentalMap().getKnownAgents();
+        Enumeration e = sensedAgents.elements();
+        while (e.hasMoreElements()) {
+            TerroristAgent ta = (TerroristAgent)e.nextElement();
+            Vector roles = ta.getRoleVector();
+            Enumeration e2 = roles.elements();
+            while (e2.hasMoreElements()) {
+                Role role = (Role)e2.nextElement();
+                if (role instanceof LeaderRole && !knownAgents.contains(ta)) {
+                    leaders++;
+                } // end if
+            } // end while
+        } // end while
+        if (leaders > 0) {
+            weight = leaders * 10;
+        } else {
+            weight = 0;
+        } // end if-else
+//        System.out.println(goalName + " weight: " + weight);
+    }
+    
+    /** Gets the Goal active rule. <B>Not used in the TNS.</B>
+     * @return the Goals active rule
+     */
+    public Rule getActiveRule() { return activeRule; }
+    
+    /** Gets the Goal name
+     * @return a String of the goals name (should be the goal class name)
+     *
+     */
+    public String getGoalName() { return goalName; }
+    
+    /** Gets the Goal type
+     * @return an Int representing the goal type
+     *
+     */
+    public int getGoalType() { return goalType; }
+    
+    /** Gets the Goal past active rule. <B>Not used in the TNS.</B>
+     * @return the Goals oast active rule
+     */
+    public Rule getPastActiveRule() { return (Rule)ruleList.elementAt(0); }
+    
+    /** Returns the ruleList Vector. <B>Not used in the TNS.</B>
+     * @return ruleList
+     */
+    public Vector getRuleList() { return ruleList; }
+    
+    /** Removes the Rule from the ruleList Vector. <B>Not used in the TNS.</B>
+     * @param pRule  The Rule that is to be removed
+     * @return The success of the removal operation:
+     * <li> true - The Rule was successfully removed
+     * <li> false - The Rule did not exist in the Goal's ruleList
+     */
+    public boolean removeRule(Rule pRule) {
+        ruleList.remove(pRule);
+        return true;
+    }
+    
+    /**
+     * Passes the PerceivedEnvironment to the activeRule in its calculate()
+     * method. <B>Not used in the TNS</B>
+     * @param pPE The sensed environment.
+     * @return Object An Object associated with the active Rules calculation.
+     */
+    public Object runActiveRule(SensedEnvironment pPE) {
+        return activeRule.calculate(pPE);
+    }
+    
+    /** Sets the ActiveRule, used for goal attainment. <B>Not used in the TNS.</B>
+     * @param pRule The agent's active rule.
+     */
+   public void setActiveRule(Rule pRule) {
+        activeRule = pRule;
+    }
+    
+    /** Sets the Goals type, the developer should designate specific goal types to
+     * be used in the RELATE architecture.
+     * @param pType Integer representing the goal type.
+     *
+     */
+    public void setGoalType(int pType) {
+        goalType = pType;
+    }
+    
+    /** Sets the PastActiveRule, used for comparison and rule weight calculation
+     * @param pRule The agent's past active rule.
+     *
+     */
+    public void setPastActiveRule(Rule pRule) {
+    }
+    
+    /**
+     * Returns the weight of the goal.
+     * @return Number The weight of the goal.
+     */
+    public Number getGoalWeight() { return new Integer(weight); }
+    
+    public Role getRole() { return role; }
+    
+    public void markGoalComplete() {
+        completed = true;
+//        System.out.println(goalName + " completed.");
+    }
+    
+    public void executeActiveTicket() {
+        // do nothing: The Contact passively waits for a FindContactsConnector
+    }
+    
+    public boolean isCompleted() { return completed; }
+    
+    public void resetGoal() {
+        completed = false;
+    }
+    
+}

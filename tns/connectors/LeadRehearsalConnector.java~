@@ -1,0 +1,21 @@
+/*
+ * LeadRehearsalConnector.java
+ *
+ * Created on March 2, 2003, 10:02 PM
+ */
+
+package tns.connectors;
+import mil.navy.nps.relate.*;
+
+/**
+ *
+ * @author  Rob Michael
+ */
+public class LeadRehearsalConnector extends Connector {
+    
+    /** Creates a new instance of LeadRehearsalConnector */
+    public LeadRehearsalConnector(Role role) {
+        super(role, "LeadRehearsalConnector");
+    }
+    
+}

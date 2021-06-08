@@ -1,0 +1,70 @@
+package tns.agents;
+import mil.navy.nps.relate.*;
+
+/**
+ * A pair is simply a class the captures the fact that two agents are linked to 
+ * each other and therefore know each other. Agent pairs also have one other 
+ * characteristic, a history value.
+ * @author  Rob Michael and Zac Staples
+ */
+public class AgentPair {
+    
+    /**
+     * One of the agents in the pair.  Named "to" for ease of reference.
+     */
+    private Agent to;
+    /**
+     * The other agent in the pair.  Named "from" for ease of reference.
+     */
+    private Agent from;
+    /**
+     * The history value for the pair.
+     */
+    private int history;
+    
+    /** 
+     * Creates a new instance of AgentPair 
+     * The starting history value is 25.
+     * @param from One of the agents in the pair.  "From" used for ease of 
+     * reference.
+     * @param to The other agent in the pair.  "To" used for ease of
+     * reference.
+     */
+    public AgentPair(Agent from, Agent to) {
+        this.from = from;
+        this.to = to;
+        history = 25;
+    } // end AgentPair constructor
+    
+    /**
+     * Returns the "to" agent in the pair.
+     * @return Agent The "to" agent in the pair.
+     */
+    public Agent getTo() { return to; }
+    
+    public Agent getFrom() { return from; }
+    
+    public boolean contains(Agent a) {
+        if (a.equals(to) || a.equals(from)) {
+            return true;
+        } else {
+            return false;
+        } // end if-else
+    } // end contains
+    
+    public int getHistory() { return history; }
+    
+    public void decrementHistory() {
+        history--;
+/*        System.out.println("\t\t\t\t\t\t\t\t\t\tHistory between " + from.getEntityName() + " and " +
+                           to.getEntityName() + " decremented by 1.  New history value: " +
+                           history);*/
+    }
+    
+    public void incrementHistory(int amount) {
+        history += amount; //zac changed this to 4 from 2
+/*        System.out.println("\t\t\t\t\t\t\t\t\t\tHistory between " + from.getEntityName() + " and " +
+                           to.getEntityName() + " incremented by " + amount + ".  New history value: " +
+                           history);*/
+    }
+}

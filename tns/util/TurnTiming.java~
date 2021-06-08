@@ -1,0 +1,28 @@
+/*
+ * TurnTiming.java
+ *
+ * Created on March 10, 2003, 9:30 AM
+ */
+
+package tns.util;
+import simkit.*;
+/**
+ *
+ * @author  robmichael
+ */
+public class TurnTiming extends SimEntityBase {
+    
+    private Thread thread;
+    /** Creates a new instance of TurnTiming */
+    public TurnTiming() {
+        thread = new Thread();
+    }
+    
+    public void doTurn() {
+        try {
+            thread.sleep(1500);
+        } catch (InterruptedException ie) {
+            System.out.println("InterruptedException: " + ie.toString());
+        } // end try-catch
+    } // end doTurn
+}

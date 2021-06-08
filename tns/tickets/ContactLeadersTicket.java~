@@ -1,0 +1,26 @@
+/*
+ * ContactLeadersTicket.java
+ *
+ * Created on March 13, 2003, 3:16 PM
+ */
+
+package tns.tickets;
+import tns.agents.*;
+import tns.actions.*;
+import tns.roles.*;
+import mil.navy.nps.relate.*;
+
+/**
+ *
+ * @author  robmichael
+ */
+public class ContactLeadersTicket extends Ticket {
+    
+    /** Creates a new instance of ContactLeadersTicket */
+    public ContactLeadersTicket(Role role, Agent agent) {
+        super(role, "ContactLeadersTicket");
+        TerroristAgent ta = (TerroristAgent)((TNSRole)role).getAgent();
+        addFrame(new MakeDoubleLinkAction(ta, (TerroristAgent)agent));
+    }
+    
+}
