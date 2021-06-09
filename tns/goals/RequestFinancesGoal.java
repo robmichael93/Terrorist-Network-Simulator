@@ -15,7 +15,7 @@ import java.util.*;
  * specialist may not be available, but instead off creating more resources, so 
  * then the leader uses his other behavior to put out a request to the 
  * organization requesting the resource.  While these requests are out, the 
- * leader’s impatience begins to grow, at which time the leader reveals his 
+ * leader's impatience begins to grow, at which time the leader reveals his 
  * behavior to convert operators in his mission to the needed specialist role.
  * @author  Rob Michael and Zac Staples
  */

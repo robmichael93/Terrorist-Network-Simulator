@@ -15,7 +15,7 @@ import java.awt.*;
 /**
  * Recruiters represent locally influential and well-connected individuals who 
  * know where to look to find potentially lucrative contacts that might want to 
- * join the organization.  Recruiters aren’t typically experienced, as they don’t
+ * join the organization.  Recruiters aren't typically experienced, as they don't
  * participate in the day-to-day operations of the organization, but focus 
  * instead on pumping in new blood to the organization.  Leaders seek recruiters
  * out so that those leaders can meet their requirements for operators in a

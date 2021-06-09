@@ -12,7 +12,7 @@ import java.awt.*;
 
 /**
  * Operators are the workhorses of the organization, providing the muscle and 
- * manpower to accomplish a leader’s mission.  Operators have the potential to 
+ * manpower to accomplish a leader's mission.  Operators have the potential to 
  * advance up in the organization, either through a type of self-promotion or 
  * through a leader-directed promotion.
  * @author  Rob Michael and Zac Staples

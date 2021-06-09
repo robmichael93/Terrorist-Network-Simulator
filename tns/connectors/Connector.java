@@ -6,7 +6,7 @@ import java.util.*;
  * Connectors allow one type of interaction between agents.  Connectors follow a
  * biological metaphor of proteins interacting with a cell that was developed by
  * John Hiles of the MOVES Institute at the Naval Postgraduate School (NPS) 
- * (Hiles et. al., 2002).  His work has been implemented in Brian Osborn’s Story 
+ * (Hiles et. al., 2002).  His work has been implemented in Brian Osborn's Story 
  * Engine (Osborn, 2002, p. 55).  Connectors are described by their type and 
  * their state of being extended or retracted.  Connector types are receptors 
  * and stimulators.  When a receptor connector is in an extended state, it can 
@@ -134,9 +134,9 @@ public class Connector {
         extended = s;
 
         // notify listeners of status change
-        Enumeration enum = listeners.elements();
-        while (enum.hasMoreElements()) {
-            ConnectorChangeListener ccl = (ConnectorChangeListener) enum.nextElement();
+        Enumeration enumerate = listeners.elements();
+        while (enumerate.hasMoreElements()) {
+            ConnectorChangeListener ccl = (ConnectorChangeListener) enumerate.nextElement();
             ccl.ConnectorChanged(new ConnectorChangeEvent(this));
         } // end while
     } // end changeStatus

@@ -8,10 +8,10 @@ import mil.navy.nps.relate.*;
 import java.util.*;
 
 /**
- * This action creates a weight value to be added to the specialist’s “provide 
- * a resource” goal if the specialist processes a “get resource” message.  
+ * This action creates a weight value to be added to the specialist's "provide 
+ * a resource" goal if the specialist processes a "get resource" message.  
  * The amount of the additional weight is the difference between the draw of the
- * leader’s mission and the status risk of the specialist.  If a leader and a 
+ * leader's mission and the status risk of the specialist.  If a leader and a 
  * specialist on nearly on par with each other in terms of influence and 
  * experience, this value should be small, reflecting the relative influential 
  * power agents have with each other when dealing with missions and resources.

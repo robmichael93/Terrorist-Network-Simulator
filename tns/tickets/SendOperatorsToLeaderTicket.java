@@ -10,15 +10,15 @@ import mil.navy.nps.relate.*;
 import java.util.*;
 
 /**
- * This ticket works like a blend between the recruiter’s “send recruits to 
- * training” ticket and the operator’s “join leader on a mission” ticket.  The 
+ * This ticket works like a blend between the recruiter's "send recruits to 
+ * training" ticket and the operator's "join leader on a mission" ticket.  The 
  * trainer checks to see if he knows any leaders directly.  If he does, he finds
  * the leaders who need operators for their missions.  Next he finds the leader 
  * with the highest draw mission and introduces the operator to the leader.  The 
- * operator receives the leader’s target and resets his “stuck” or bored counter 
- * and the leader’s “stuck” counter for finding operators.  The trainer then 
+ * operator receives the leader's target and resets his "stuck" or bored counter 
+ * and the leader's "stuck" counter for finding operators.  The trainer then 
  * receives a point of experience or influence for each operator he sends to a 
- * leader.  If the trainer doesn’t know any leaders at all or any leaders that 
+ * leader.  If the trainer doesn't know any leaders at all or any leaders that 
  * need operators, he sends out a find person message looking for a leader role.
  * @author  Rob Michael and Zac Staples
  */

@@ -13,7 +13,7 @@ import java.lang.reflect.*;
  * connector communication paradigm only works within the confines of directly 
  * linked agents and in the use of the sensory model.  In the messaging model, 
  * messages are placed in an outbox, evaluated to whether or not they should be 
- * sent to a particular person, delivered, placed in other agents’ inboxes, and 
+ * sent to a particular person, delivered, placed in other agents' inboxes, and 
  * then when an agent checks his inbox, he evaluates whether or not those 
  * messages should be answered.  Each message includes the originator (so that 
  * the person who answers it knows who sent it), the intended target, stated in

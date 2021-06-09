@@ -71,6 +71,7 @@ public interface ImmutableGraphEltSet {
     /** Return the current Node count.
       * @deprecated        this method has been replaced by the <tt>nodeCount()</tt> method.
       */
+    @Deprecated
     public int nodeNum();
 
     /** Return an iterator over the Nodes in the cumulative Vector, null if it is empty. */
@@ -82,6 +83,7 @@ public interface ImmutableGraphEltSet {
     /** Return the current Edge count.
       * @deprecated        this method has been replaced by the <tt>edgeCount()</tt> method.
       */
+    @Deprecated
     public int edgeNum();
 
     /** Return an iterator over the Edges in the cumulative Vector, null if it is empty. */

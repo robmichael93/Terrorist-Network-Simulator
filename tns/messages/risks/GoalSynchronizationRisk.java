@@ -11,9 +11,9 @@ package tns.messages.risks;
  * certain types of communications and ignore others.  While Mohammed Atta is 
  * in Boston about to board a plane destined for the north World Trade Center 
  * building and he gets a call from an associate looking for Mohammed to 
- * introduce a friend to a well-connected arms dealer, Mohammed wouldn’t take 
- * the call because he’s in the middle of an important mission in which he knows
- * he’s going to die for the glory of his cause.    The message type identifier 
+ * introduce a friend to a well-connected arms dealer, Mohammed wouldn't take 
+ * the call because he's in the middle of an important mission in which he knows
+ * he's going to die for the glory of his cause.    The message type identifier 
  * is used in evaluating the goal synchronization risk against a table created
  * by the authors to model this behavior.
  * @author  Rob Michael and Zac Staples

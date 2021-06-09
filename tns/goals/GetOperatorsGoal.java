@@ -9,7 +9,7 @@ import java.util.*;
  * This goal gives leaders the behavior of seeking out the source of operators 
  * for missions: recruiters and trainers.  If the leader detects any recruiters
  * or trainers he will try to contact them, much the same way recruiters
- * introduce themselves to contacts.  If the leader doesn’t know either one of 
+ * introduce themselves to contacts.  If the leader doesn't know either one of 
  * these types of agents, then he will post a request to those he knows to find 
  * these agents so that he can get the agents he needs.
  * @author  Rob Michael and Zac Staples

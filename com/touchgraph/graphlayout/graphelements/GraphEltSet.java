@@ -94,6 +94,7 @@ public class GraphEltSet implements ImmutableGraphEltSet {
     /** Return the number of Nodes in the cumulative Vector. 
       * @deprecated        this method has been replaced by the <tt>nodeCount()</tt> method.
       */
+    @Deprecated
     public int nodeNum() {
         return nodes.size(); 
     }
@@ -160,6 +161,7 @@ public class GraphEltSet implements ImmutableGraphEltSet {
     /** Return the number of Edges in the cumulative Vector. 
       * @deprecated        this method has been replaced by the <tt>edgeCount()</tt> method.
       */
+    @Deprecated
     public int edgeNum() {
         return edges.size(); 
     }

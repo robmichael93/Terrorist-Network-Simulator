@@ -11,8 +11,8 @@ import java.util.*;
  * Just like the other message tickets, the recipient and the originator create 
  * links to each other, update their mental maps based on the message chain, and
  * update the histories of the agent pairs in the message chain.  The operator 
- * receives the target from the leader, then the leader’s stuck counter for 
- * getting operators is reset and lastly the operator’s stuck counter (for 
+ * receives the target from the leader, then the leader's stuck counter for 
+ * getting operators is reset and lastly the operator's stuck counter (for 
  * changing to a trainer) is reset as well.
  * @author  Rob Michael and Zac Staples
  */

@@ -7,7 +7,7 @@ import tns.connectors.*;
 import java.util.*;
 
 /**
- * This ticket works like the “lead mission rehearsal” ticket, except that it is 
+ * This ticket works like the "lead mission rehearsal" ticket, except that it is 
  * used for executing missions.
  * @author  Rob Michael and Zac Staples
  */

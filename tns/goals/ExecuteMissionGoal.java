@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * Once the leader has decided that mission is ready to be executed, this goal 
  * gives the operator the behavior of participating in the mission for a period 
- * of time as specified by the leader’s requirements.
+ * of time as specified by the leader's requirements.
  * @author  Rob Michael and Zac Staples
  */
 public class ExecuteMissionGoal implements TNSGoal {

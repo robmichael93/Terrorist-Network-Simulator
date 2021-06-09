@@ -5,7 +5,7 @@ import tns.agents.*;
 import mil.navy.nps.relate.*;
 
 /**
- * This action adds the operator to the leader’s mission and the operator 
+ * This action adds the operator to the leader's mission and the operator 
  * receives information about the target.
  * @author  Rob Michael and Zac Staples
  */

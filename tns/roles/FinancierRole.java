@@ -13,7 +13,7 @@ import java.awt.*;
 /**
  * The first of three specialist roles, the financier provides the 
  * ever-essential component for any operation, money.  In the specialist roles, 
- * the agent’s experience drives their ability to produce their particular 
+ * the agent's experience drives their ability to produce their particular 
  * resource and their influence controls how much resource; therefore 
  * specialists represent a range of individuals in this class.  Financiers with 
  * a low experience and influence model individuals only capable of knocking
@@ -21,7 +21,7 @@ import java.awt.*;
  * relatively small amount of money.  Experienced and influential financiers on 
  * the hand are like bankers who know how to move large amounts of money 
  * discreetly, or oil sheiks who want to support the organization while at the 
- * same time appearing impartial, or individuals with “old money” that donate to 
+ * same time appearing impartial, or individuals with "old money" that donate to 
  * the cause.
  * @author  Rob Michael and Zac Staples
  */

@@ -7,7 +7,7 @@ import java.util.*;
 
 /**
  * This ticket removes the operator from a mission if he is in one and then 
- * changes the operator’s role to that of a trainer on one caveat.  The operator 
+ * changes the operator's role to that of a trainer on one caveat.  The operator 
  * will only become a trainer if the system can handle having another trainer.  
  * The ratio between the number of operators in the system and the number of 
  * trainers in the system is computed and if that ratio exceeds a particular 

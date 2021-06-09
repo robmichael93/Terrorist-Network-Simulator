@@ -8,10 +8,10 @@ import tns.agents.*;
  * if an influential logistician receives a request from some second-rate leader
  * looking for some fake passports, he is probably going to turn him down 
  * because the leader is beneath him, but if he receives a call from Pablo 
- * Escobar looking for the same thing, he’s probably going to accommodate him. 
+ * Escobar looking for the same thing, he's probably going to accommodate him. 
  * To place the status risk on par with mission draw for the purpose of 
- * processing the “get resource” message as described below, this risk is based 
- * on the product of the specialist’s influence and experience.
+ * processing the "get resource" message as described below, this risk is based 
+ * on the product of the specialistï¿½s influence and experience.
  * @author  Rob Michael and Zac Staples
  */
 public class StatusRisk implements Risk {

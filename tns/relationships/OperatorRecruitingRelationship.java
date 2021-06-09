@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * Contacts and recruiters participate in the operator recruiting relationship 
  * for the sole purpose of allowing recruiters the ability to entice those 
- * individuals in the population most likely to support the organization’s cause.
+ * individuals in the population most likely to support the organization's cause.
  * @author  Rob Michael and Zac Staples
  */
 public class OperatorRecruitingRelationship implements TNSRelationship {

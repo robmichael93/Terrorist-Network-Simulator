@@ -9,10 +9,10 @@ import tns.messages.*;
 import java.util.*;
 
 /**
- *  f the operator knows at least one leader, he first picks out the leaders
+ * If the operator knows at least one leader, he first picks out the leaders
  * that need operators on their missions and then he looks at the draw value for 
  * their missions.  The operator joins the leader with the highest draw mission,
- * receiving the leader’s target and resetting a “stuck counter” that determines
+ * receiving the leader's target and resetting a "stuck counter" that determines
  * how bored an operator is (and how close to advancing to a trainer) and how 
  * impatient a leader is for finding recruiters and trainers.  If the operator 
  * does not know a leader directly, he will extend a connector the trainer can 

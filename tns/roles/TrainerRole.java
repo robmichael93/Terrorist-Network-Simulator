@@ -13,7 +13,7 @@ import java.awt.*;
  * they do as far as the ins and outs of mission operations.  As such, these 
  * trainers are ideal for passing that knowledge down to young recruits. 
  * Trainers are like career Non-Commissioned Officers (NCOs) in militaries 
- * today, people who’ve “been around the block” and are looking to share that
+ * today, people who've "been around the block" and are looking to share that
  * wisdom with raw recruits.  Trainers also sit at the top of one track of 
  * advancement for individuals in the organization.  Those individuals who 
  * either do not become promoted by a leader to a specialist role and continue 

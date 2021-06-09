@@ -188,10 +188,10 @@ public class TNSMainSimulation extends SimEntityBase {
      * sensed environment as necessary for evaluating his goals, which comes
      * next.  After evaluating his goals, he takes the highest weighted goal and 
      * executes whatever ticket is associated with that goal.  Some tickets are 
-     * not executed until the agent connects to another agent’s connector, so 
-     * some goals do not have tickets that necessarily execute during the agent’s 
-     * turn, but get executed on another agent’s turn when a connection is made. 
-     * The last part of each agent’s turn is to process his outbox.  Once all 
+     * not executed until the agent connects to another agent's connector, so 
+     * some goals do not have tickets that necessarily execute during the agent's 
+     * turn, but get executed on another agent's turn when a connection is made. 
+     * The last part of each agent's turn is to process his outbox.  Once all 
      * the agents have taken their turns, the simulation checks for any 
      * relationships that should be terminated because their history dropped 
      * past a minimum threshold.

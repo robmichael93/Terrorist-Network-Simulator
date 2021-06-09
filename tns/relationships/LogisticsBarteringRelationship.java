@@ -11,7 +11,7 @@ import com.touchgraph.graphlayout.*;
 /**
  * The leader and logistician roles participate in the logistics bartering 
  * relationships for the sole purpose of exchanging logistical resources at the 
- * leader’s request.
+ * leader's request.
  * @author  Rob Michael and Zac Staples
  */
 public class LogisticsBarteringRelationship implements TNSRelationship {

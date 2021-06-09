@@ -7,7 +7,7 @@ import mil.navy.nps.relate.*;
 
 /**
  * To complement the mental map, a helper class known as the SubNet, or 
- * sub-network, kept track of the edges or links within the individual agent’s 
+ * sub-network, kept track of the edges or links within the individual agent's 
  * mental map of the network.  Where the mental map tracks exactly who the agent 
  * knows and knows about indirectly, the mental map delegates the task of 
  * tracking which agents know which other agents in the mental map.  The 

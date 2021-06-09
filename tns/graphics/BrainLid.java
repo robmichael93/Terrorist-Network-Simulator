@@ -11,18 +11,18 @@ import javax.swing.border.*;
 import java.util.*;
 
 /**
- * An agent “brain lid” provides the user the ability to peek inside an agent to
- * see the agent’s roles, goals, personality, and mental map.  Some roles have 
+ * An agent "brain lid" provides the user the ability to peek inside an agent to
+ * see the agent's roles, goals, personality, and mental map.  Some roles have 
  * specialized panels that provide additional information particular to those 
- * roles.  On the left side of the “brain lid” is the agent’s information and on 
+ * roles.  On the left side of the "brain lid" is the agent's information and on 
  * the right side the mental map.  In the goals section of the agent info the 
  * goal weight for each goal is shown in parenthesis to the right of each goal 
  * and the active goal is highlighted in red.  Completed goals are marked with 
  * a check to the left of the goal.  The mental map on the right side of the 
- * “brain lid” shows the agent’s worldview of the network.  Only those agents
+ * "brain lid" shows the agentï¿½s worldview of the network.  Only those agents
  * the agent knows directly or knows about indirectly through messaging are
  * displayed on the mental map.  Links in the mental map are unidirectional, 
- * which highlight the indirect links in the agent’s mental map, those links 
+ * which highlight the indirect links in the agent's mental map, those links 
  * between agents only known about, but not directly linked to.  
  * @author  Rob Michael and Zac Staples
  */

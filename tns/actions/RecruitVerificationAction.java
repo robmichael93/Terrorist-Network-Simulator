@@ -8,9 +8,9 @@ import mil.navy.nps.relate.*;
 import java.util.*;
 
 /**
- * This action adds a point to the recruit’s allegiance value.  If the recruit’s 
+ * This action adds a point to the recruit's allegiance value.  If the recruit's 
  * allegiance value then exceeds a threshold set by the recruit training 
- * relationship, then the recruit’s “prove allegiance” goal is marked complete.
+ * relationship, then the recruit's "prove allegiance" goal is marked complete.
  * @author  Rob Michael and Zac Staples
  */
 public class RecruitVerificationAction implements Frame {

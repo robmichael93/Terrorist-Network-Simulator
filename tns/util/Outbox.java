@@ -10,16 +10,16 @@ import java.lang.reflect.*;
 
 /**
  * Each agent also has an outbox for sending messages to other agents.  At the 
- * end of an agent’s turn, the agent will process the messages in his outbox.  
+ * end of an agent's turn, the agent will process the messages in his outbox.  
  * The agent keeps track of the messages he has processed by their fully 
  * qualified name, so he does not send more than one message of any given fully 
- * qualified name.  If the agent hasn’t send a message of a given type, then he 
+ * qualified name.  If the agent hasn't send a message of a given type, then he 
  * first checks to see if he is the originator or if he is forwarding the 
  * message.  Next, he evaluates the benefits and risks of sending or forwarding 
  * the message.  If the benefits exceed the risks, then he creates a new message 
  * forwarding chain if he originated the message, or adds a new element to the 
  * chain if he is forwarding the message.  The agent then puts the message in 
- * the recipient’s inbox and lastly annotates how many times the agent has 
+ * the recipient's inbox and lastly annotates how many times the agent has 
  * communicated with the recipient.  This annotation is used in determining how 
  * familiar an agent is with another agent when evaluating the familiarity risk.
  * @author  Rob Michael and Zac Staples

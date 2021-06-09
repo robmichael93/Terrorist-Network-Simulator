@@ -6,7 +6,7 @@ import tns.tickets.*;
 import mil.navy.nps.relate.*;
 
 /**
- * This action increments the resource level collected for the leader’s mission 
+ * This action increments the resource level collected for the leader's mission 
  * and decrements the resource level the specialist has on hand.  This action 
  * also rewards the specialist using a scalar equal to the number of resource 
  * points exchanged.

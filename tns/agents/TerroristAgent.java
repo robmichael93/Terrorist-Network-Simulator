@@ -16,12 +16,12 @@ import com.touchgraph.graphlayout.*;
  * articular goals related to those roles.  Some of the roles carry with them 
  * particular needs and capabilities, but the majority of the functionality 
  * remained the same across roles.  Each agent can take on more than one role 
- * and the authors’ implementation reflects this fact for the most part, but
+ * and the authors' implementation reflects this fact for the most part, but
  * this initial implementation did not attempt to allow agents this ability for 
  * the simplicity of code creation.  Each agent has its own personality to set 
  * it apart from other agents and to affect its interactions with other agents 
  * in the simulation.  The last key component to the terrorist agents is the 
- * agent’s mental map.
+ * agent's mental map.
  * @author  Rob Michael and Zac Staples
  */
 public class TerroristAgent extends Agent {
@@ -340,9 +340,9 @@ public class TerroristAgent extends Agent {
      */
     public void changeLink(String type, Agent agent1, Agent agent2) {
         // notify listeners of status change
-        Enumeration enum = linkListeners.elements();
-        while (enum.hasMoreElements()) {
-            LinkChangeListener lcl = (LinkChangeListener) enum.nextElement();
+        Enumeration enumerate = linkListeners.elements();
+        while (enumerate.hasMoreElements()) {
+            LinkChangeListener lcl = (LinkChangeListener) enumerate.nextElement();
             lcl.LinkChanged(new LinkChangeEvent(type, agent1, agent2));
         } // end while
     } // end changeLink
@@ -385,9 +385,9 @@ public class TerroristAgent extends Agent {
      */
     public void changeState(Agent agent) {
         // notify listeners of status change
-        Enumeration enum = stateListeners.elements();
-        while (enum.hasMoreElements()) {
-            StateChangeListener scl = (StateChangeListener) enum.nextElement();
+        Enumeration enumerate = stateListeners.elements();
+        while (enumerate.hasMoreElements()) {
+            StateChangeListener scl = (StateChangeListener) enumerate.nextElement();
             scl.StateChanged(new StateChangeEvent(agent));
         } // end while
     } // end changeLink
@@ -432,9 +432,9 @@ public class TerroristAgent extends Agent {
      */
     public void changeHistory(AgentPair agentPair, int amount) {
         // notify listeners of status change
-        Enumeration enum = historyListeners.elements();
-        while (enum.hasMoreElements()) {
-            HistoryChangeListener hcl = (HistoryChangeListener) enum.nextElement();
+        Enumeration enumerate = historyListeners.elements();
+        while (enumerate.hasMoreElements()) {
+            HistoryChangeListener hcl = (HistoryChangeListener) enumerate.nextElement();
             hcl.HistoryChanged(new HistoryChangeEvent(agentPair, amount));
         } // end while
     } // end changeLink

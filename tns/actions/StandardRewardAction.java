@@ -8,7 +8,7 @@ import simkit.random.*;
  * above in the tickets that use this action, and awards one experience point or
  * one influence point on an equal basis during each iteration.  When that part 
  * of the action is finished, the agent is awarded allegiance on a triangle 
- * distribution with a minimum of –1, a maximum of 1, and a mid-point of 0.5.  
+ * distribution with a minimum of -1, a maximum of 1, and a mid-point of 0.5.  
  * The reason for the modeling decision to use this distribution for allegiance 
  * was that a terrorist agent can gain influence or experience based the event 
  * that they just participated in, whether it be sending an operator to a 
@@ -16,7 +16,7 @@ import simkit.random.*;
  * has a good experience, a bad experience, or a neutral experience.  
  * The authors weighted the distribution so that agents had a lower chance of 
  * having a bad experience and a higher chance of having a neutral experience, 
- * so that an agent’s commitment to the organization slowly increased over time.
+ * so that an agent's commitment to the organization slowly increased over time.
  * A feature the authors left for future work was to remove an agent from the 
  * organization when the allegiance value dropped below a certain threshold.
  * @author  robmichael

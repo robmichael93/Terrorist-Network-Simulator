@@ -8,7 +8,7 @@ import java.util.*;
 
 /**
  * This action removes the operator from the mission, creating a vacancy that 
- * the leader now has to fill.  The operator’s goals are all reset except for 
+ * the leader now has to fill.  The operator's goals are all reset except for 
  * the advance goal and the target information is cleared out for the operator.
  * @author  Rob Michael and Zac Staples
  */

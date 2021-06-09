@@ -8,8 +8,8 @@ import tns.messages.benefits.*;
 
 /**
  * This message allows a leader to seek out resource providers if he does not 
- * know any, or to try to persuade a known specialist that isn’t responding to 
- * the leader’s attempt to use a connector to reach the specialist because the 
+ * know any, or to try to persuade a known specialist that isn't responding to 
+ * the leader's attempt to use a connector to reach the specialist because the 
  * specialist is off producing a resource.
  * @author  Rob Michael and Zac Staples
  */

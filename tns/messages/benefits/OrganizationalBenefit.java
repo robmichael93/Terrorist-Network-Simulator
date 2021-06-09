@@ -2,7 +2,7 @@ package tns.messages.benefits;
 import tns.agents.*;
 
 /**
- * An agent’s allegiance defines the organizational benefit.  This benefit models
+ * An agent's allegiance defines the organizational benefit.  This benefit models
  * the behavior that in general, the more committed an agent is to the 
  * organization the more likely the agent will act on the message.
  * @author  Rob Michael and Zac Staples

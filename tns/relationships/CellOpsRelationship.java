@@ -10,7 +10,7 @@ import com.touchgraph.graphlayout.*;
 
 /**
  * Once an operator is in a cell, he participates in a cell operations 
- * relationship with that leader.  This relationship facilitates the leader’s
+ * relationship with that leader.  This relationship facilitates the leader's
  * ability to rehearse and execute his mission with the members of his cell.  It
  * also allows leaders to spot promote operators to specialists when the need 
  * arises.

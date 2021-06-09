@@ -7,9 +7,9 @@ import mil.navy.nps.relate.*;
 import java.util.*;
 
 /**
- * The recruit training relationship defines a threshold that a recruit’s 
+ * The recruit training relationship defines a threshold that a recruit's 
  * allegiance value must exceed before they can proceed onto training.  This
- * goal represents the recruit’s desire to become initiated into the 
+ * goal represents the recruit's desire to become initiated into the 
  * organization, to prove their worth so they can move on to being an operator.
  * @author  Rob Michael and Zac Staples
  */

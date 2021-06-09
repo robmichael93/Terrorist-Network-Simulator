@@ -15,7 +15,7 @@ import java.awt.*;
  * organization with a given level of allegiance and if that level is not high 
  * enough for the recruiter, then the recruiter will take that recruit out on a 
  * mini-mission to let him prove his worth, possibly with other recruits.  Once 
- * a recruit has been “proven,” then the recruiter sends him off to a trainer to
+ * a recruit has been "proven," then the recruiter sends him off to a trainer to
  * be turned into an operator.
  * @author  Rob Michael and Zac Staples
  */

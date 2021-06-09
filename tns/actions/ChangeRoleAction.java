@@ -10,8 +10,8 @@ import com.touchgraph.graphlayout.*;
 
 /**
  * This action removes the agent from the relationships associated with the 
- * current role, removes the role from the agent’s collection of roles, creates 
- * the new Role object and adds the role to the agent’s collection of roles.  
+ * current role, removes the role from the agent's collection of roles, creates 
+ * the new Role object and adds the role to the agent's collection of roles.  
  * The agent loses the goals associated with the old role and gains the new 
  * goals associated with the new role.
  * @author  robmichael

@@ -57,7 +57,7 @@ public class Target {
     /**
      * Target stability models the window of opportunity when the target is 
      * vulnerable to attack.  The World Trade Center buildings were rock-solid 
-     * stable targets; they weren’t moving.  However, the gassing of thousands 
+     * stable targets; they weren't moving.  However, the gassing of thousands 
      * of spectators at the Super Bowl would constitute a low stability target, 
      * where the window of opportunity consisted of a matter of hours.
      */

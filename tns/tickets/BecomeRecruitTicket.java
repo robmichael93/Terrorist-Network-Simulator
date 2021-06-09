@@ -8,7 +8,7 @@ import java.util.*;
 
 /**
  * The next step that a contact takes is to change roles to a recruit and mark 
- * the “become a recruit goal” complete.
+ * the "become a recruit goal" complete.
  * @author  Rob Michael and Zac Staples
  */
 public class BecomeRecruitTicket extends Ticket {

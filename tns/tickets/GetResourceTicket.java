@@ -12,7 +12,7 @@ import mil.navy.nps.relate.*;
  * chain are updated.  This ticket also sets a resource requested latch for the 
  * specialist, which is used in evaluating the provide resources goal as
  * mentioned above.  This ticket also calculates the weighting applied to the 
- * specialist’s provide resource goal.
+ * specialist's provide resource goal.
  * @author  Rob Michael and Zac Staples
  */
 public class GetResourceTicket extends Ticket {

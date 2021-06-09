@@ -7,7 +7,7 @@ import simkit.*;
 /**
  * Tickets encapsulate the procedural knowledge that an agent has.  This idea 
  * again was developed by John Hiles while at the MOVES Institute.  The concept 
- * of tickets is explained in greater detail in Brian Osborn’s dissertation work
+ * of tickets is explained in greater detail in Brian Osborn's dissertation work
  * on the Story Engine [Osborn2002, 68 - 71], so only a brief description of 
  * their functionality is included here.  Tickets incorporate atomic actions an 
  * agent can take, typically in a sequential manner.  Tickets are not limited to 

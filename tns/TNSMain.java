@@ -32,7 +32,7 @@ public class TNSMain {
         recruiterArrival.addSimEventListener(simulation);
         simulation.addSimEventListener(timing);
         Schedule.setVerbose(false);
-        Schedule.stopOnEvent("Turn", 500);
+        Schedule.stopOnEvent(500, "Turn");
         Schedule.reset();
         Schedule.startSimulation();
     } // end main

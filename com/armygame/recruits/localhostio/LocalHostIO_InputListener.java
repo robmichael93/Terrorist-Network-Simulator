@@ -1,1 +1,0 @@
-package com.armygame.recruits.localhostio;public interface LocalHostIO_InputListener/****************************************/{  public void lineReceiver(String s);  //---------------------------------}

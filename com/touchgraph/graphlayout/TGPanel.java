@@ -178,6 +178,7 @@ public class TGPanel extends JPanel {
     /** Returns the current node count within the VisibleLocality.
       * @deprecated        this method has been replaced by the <tt>visibleNodeCount()</tt> method.
       */
+    @Deprecated
     public int nodeNum() {
         return visibleLocality.nodeCount();
     }
@@ -331,6 +332,7 @@ public class TGPanel extends JPanel {
     /** Return the number of Edges in the Locality. 
       * @deprecated        this method has been replaced by the <tt>visibleEdgeCount()</tt> method.
       */
+    @Deprecated
     public int edgeNum() {
         return visibleLocality.edgeCount();
     }

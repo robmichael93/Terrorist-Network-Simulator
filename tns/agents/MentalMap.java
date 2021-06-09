@@ -8,10 +8,10 @@ import tns.agents.*;
 import tns.graphics.*;
 
 /**
- * The mental map is the agent’s mental space of how it perceives the network 
+ * The mental map is the agent's mental space of how it perceives the network 
  * environment based on whom that agent knows directly and indirectly knows 
- * about.  A mental map is the agent’s own worldview.  The agent evaluates its 
- * goals and acts upon them largely based on the agent’s mental map.  An agent’s 
+ * about.  A mental map is the agent's own worldview.  The agent evaluates its 
+ * goals and acts upon them largely based on the agent's mental map.  An agent's 
  * mental map likely differs from the explicit map of the network, or the ground 
  * truth of who knows whom in the organization.
  * @author  Rob Michael and Zac Staples
@@ -214,9 +214,9 @@ public class MentalMap implements SensedEnvironment {
      */
     public void changeNode(String type, Agent agent) {
         // notify listeners of status change
-        Enumeration enum = nodeListeners.elements();
-        while (enum.hasMoreElements()) {
-            NodeChangeListener ncl = (NodeChangeListener) enum.nextElement();
+        Enumeration enumerate = nodeListeners.elements();
+        while (enumerate.hasMoreElements()) {
+            NodeChangeListener ncl = (NodeChangeListener) enumerate.nextElement();
             ncl.NodeChanged(new NodeChangeEvent(type, agent));
         } // end while
     } // end changeLink

@@ -4,8 +4,8 @@ import tns.actions.*;
 
 /**
  * This ticket allows the specialist to increase his stockpile of resources.  
- * The specialist’s stockpile is increased by a random amount based on a right 
- * triangle distribution as shown in Figure 8 above, using the specialist’s 
+ * The specialist's stockpile is increased by a random amount based on a right 
+ * triangle distribution as shown in Figure 8 above, using the specialist's 
  * experience as the maximum and mean value.
  * @author  Rob Michael and Zac Staples
  */

@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * This behavior interacts with the recruit behavior of becoming an operator to 
  * produce operators for the organization.  This goal allows the trainer to 
- * continue training a recruit until that recruit’s experience has exceeded the 
+ * continue training a recruit until that recruit's experience has exceeded the 
  * threshold needed to become an operator.
  * @author  Rob Michael and Zac Staples
  */

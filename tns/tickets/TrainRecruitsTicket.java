@@ -3,9 +3,9 @@ import tns.actions.*;
 import mil.navy.nps.relate.*;
 
 /**
- * This ticket works like the recruiter’s “verify recruits’ allegiance” ticket in 
+ * This ticket works like the recruiter's "verify recruit's allegiance" ticket in 
  * that the trainer gives each recruit he is training a point of experience. 
- * If the recruit’s experience exceeds a threshold, then the trainer turns the 
+ * If the recruit's experience exceeds a threshold, then the trainer turns the 
  * recruit into an operator.
  * @author  Rob Michael and Zac Staples
  */

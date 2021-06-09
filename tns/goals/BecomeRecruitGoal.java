@@ -7,7 +7,7 @@ import mil.navy.nps.relate.*;
 import java.util.*;
 
 /**
- * This goal models the contact’s official passage from being just a contact to 
+ * This goal models the contact's official passage from being just a contact to 
  * actually getting his foot in the door as a recruit.
  * @author  Rob Michael and Zac Staples
  */

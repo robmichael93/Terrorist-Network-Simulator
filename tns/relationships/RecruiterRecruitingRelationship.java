@@ -9,7 +9,7 @@ import java.util.*;
  * recruiters in the environment that are not directly linked to the leader.  
  * This relationship models the fact that leaders seek out locally 
  * knowledgeable, influential, and willing individuals who can assist the leader 
- * in adding numbers to the organization’s roster.  Without operators in the 
+ * in adding numbers to the organization's roster.  Without operators in the 
  * organization, the organization cannot grow, so recruiters perform half of the 
  * critical role of feeding these individuals to the leaders.
  * @author  Rob Michael and Zac Staples

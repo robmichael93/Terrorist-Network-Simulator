@@ -10,7 +10,7 @@ import java.util.*;
 
 /**
  * This action works much like the recruit verification action, except it adds a
- * point to the recruit’s experience value.  When the value exceeds a threshold 
+ * point to the recruit's experience value.  When the value exceeds a threshold 
  * set by the recruit training relationship, the recruit changes roles to an 
  * operator.
  * @author  Rob Michael and Zac Staples

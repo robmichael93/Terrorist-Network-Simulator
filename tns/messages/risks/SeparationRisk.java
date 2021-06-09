@@ -4,9 +4,9 @@ import tns.messages.*;
 /**
  * The separation risk models that people are more likely to do some task for 
  * someone within their own circle of friends or known associates.  If a person 
- * asks someone else to do something for his sister’s friend’s husband’s cousin, 
+ * asks someone else to do something for his sister's friend's husband's cousin, 
  * that person is probably pretty unlikely to perform that task because of the 
- * amount of separation.  However, for a person’s immediate friends and maybe 
+ * amount of separation.  However, for a person's immediate friends and maybe 
  * their friends the amount of separation probably is reasonable.
  * @author  Rob Michael and Zac Staples
  */

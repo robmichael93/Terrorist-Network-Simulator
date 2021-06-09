@@ -3,7 +3,7 @@ import tns.actions.*;
 import mil.navy.nps.relate.*;
 
 /**
- * Like the “rehearse a mission” ticket, this ticket increases a counter for the 
+ * Like the "rehearse a mission" ticket, this ticket increases a counter for the 
  * number of turns the operator has executed a mission.  When the counter 
  * reaches the required number of turns, then the mission execution goal is 
  * marked complete, the operator receives experience and influence from the 

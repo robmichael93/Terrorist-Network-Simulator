@@ -6,8 +6,8 @@ import mil.navy.nps.relate.*;
 import java.lang.reflect.*;
 
 /**
- * This action creates a new message using Java’s reflection capabilities and 
- * then places the object in the agent’s outbox.
+ * This action creates a new message using Java's reflection capabilities and 
+ * then places the object in the agent's outbox.
  * @author  Rob Michael and Zac Staples
  */
 public class PutMessageInOutboxAction implements Frame {

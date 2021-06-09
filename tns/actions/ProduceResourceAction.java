@@ -8,7 +8,7 @@ import simkit.random.*;
 /**
  * This action produces a random number of resource points using a right 
  * triangle distribution with the maximum and mean set to the same value as the 
- * specialist’s experience value.
+ * specialist's experience value.
  * @author  Rob Michael and Zac Staples
  */
 public class ProduceResourceAction implements Frame {

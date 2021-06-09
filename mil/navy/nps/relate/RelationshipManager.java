@@ -393,9 +393,9 @@ public class RelationshipManager
         Vector proposedMembers = new Vector();
         proposedMembers.addAll(members);
         proposedMembers.add(agent);
-        Enumeration enum = proposedMembers.elements();
-        while (enum.hasMoreElements()) {
-            TerroristAgent ta = (TerroristAgent)enum.nextElement();
+        Enumeration enumerate = proposedMembers.elements();
+        while (enumerate.hasMoreElements()) {
+            TerroristAgent ta = (TerroristAgent)enumerate.nextElement();
             MentalMap map = ta.getMentalMap();
 //            System.out.println(ta.getEntityName() + " has " + map.getSubNet().numberOfUniquePairs() + " edges.");
             Iterator i = map.getSubNet().getUniquePairs().iterator();

@@ -7,7 +7,7 @@ import java.util.*;
 
 /**
  * With this goal, the specialist exhibits the behavior that he will produce 
- * resources until he exceeds his capacity to acquire the resource.  The agent’s
+ * resources until he exceeds his capacity to acquire the resource.  The agent's
  * influence value determines how much of a resource an agent can stockpile.  
  * The idea with this design decision was that more influential specialists 
  * would have access to greater levels of resources as described above.  In 

@@ -11,7 +11,7 @@ import java.util.*;
 
 /**
  * In this ticket the recruiter checks to see if he knows any trainers directly.
- * If he does, he looks the each trainer’s influence and sends the recruits to 
+ * If he does, he looks the each trainer's influence and sends the recruits to 
  * the trainer with the highest influence, supporting the rich-get-richer 
  * phenomenon.  The recruit and the trainer each create a link to each other and 
  * add the other person to their mental maps.  The recruiter then receives 

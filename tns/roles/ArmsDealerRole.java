@@ -17,7 +17,7 @@ import java.awt.*;
  * employ.  Bit player arms dealers might rob a gun store or make a fertilizer
  * bomb from something they read off the Internet while real players in the arms 
  * market know how to obtain untraceable small arms, quality explosives, and 
- * possibly weapons of mass effects, such as “dirty” bombs or even quite 
+ * possibly weapons of mass effects, such as "dirty" bombs or even quite 
  * possibly nuclear weapons, biological pathogens such as anthrax or small pox, 
  * or chemical toxins such as Sarin gas.
  * @author  Rob Michael and Zac Staples

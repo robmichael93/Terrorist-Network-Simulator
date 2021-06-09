@@ -327,6 +327,7 @@ public class Node {
     /** Return the number of Edges in the cumulative Vector. 
       * @deprecated        this method has been replaced by the <tt>edgeCount()</tt> method.
       */
+    @Deprecated
     public int edgeNum() {
         return edges.size(); 
     }

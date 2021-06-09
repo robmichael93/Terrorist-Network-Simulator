@@ -9,7 +9,7 @@ import java.util.*;
 /**
  * This action removes the mission rehearsal and mission execute tickets from 
  * both the operators and the leader and replaces them with new ones since they 
- * were modified when the mission was completed by the “execute a mission” 
+ * were modified when the mission was completed by the "execute a mission" 
  * action above.  The action then resets all of the goals for the operators and 
  * the leader and lastly clears out the target information for the operators 
  * and clears out the mission and target information for the leader.

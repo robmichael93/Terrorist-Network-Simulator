@@ -8,7 +8,7 @@ import java.util.*;
 
 /**
  * This ticket simply extends a connector that operators in the mission can 
- * hear, which causes the operators to execute their “rehearse mission” ticket.  
+ * hear, which causes the operators to execute their "rehearse mission" ticket.  
  * The leader also performs similar actions as the operators.
  * @author  Rob Michael and Zac Staples
  */

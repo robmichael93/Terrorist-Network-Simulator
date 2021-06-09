@@ -8,7 +8,7 @@ import tns.agents.*;
 import java.util.*;
 
 /**
- * This ticket works exactly like the “find recruiters” ticket, except that it 
+ * This ticket works exactly like the "find recruiters" ticket, except that it 
  * is designed for connecting to trainers.
  * @author  Rob Michael and Zac Staples
  */

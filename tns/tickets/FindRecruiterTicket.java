@@ -8,7 +8,7 @@ import tns.agents.*;
 import java.util.*;
 
 /**
- * This ticket works similarly to the “join a leader on a mission” ticket.  If 
+ * This ticket works similarly to the "join a leader on a mission" ticket.  If 
  * the leader does not know a recruiter, then the leader extends a connector 
  * that sensed recruiters can hear and puts a find person message for a 
  * recruiter role in the outbox unless a recruiter hears the connector and 

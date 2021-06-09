@@ -3,7 +3,7 @@ import mil.navy.nps.relate.*;
 import java.util.*;
 
 /**
- * With the agent’s role or roles, the personality gives each agent a distinct 
+ * With the agent's role or roles, the personality gives each agent a distinct 
  * character.  In the RELATE architecture, each personality is unique to the 
  * specific application, and in the TNS, each agent has personality traits of 
  * allegiance, experience, and influence.
@@ -12,16 +12,16 @@ import java.util.*;
 public class TerroristAgentPersonality implements Personality {
     
     /**
-     * An agent’s allegiance value models the agent’s dedication to the 
+     * An agent's allegiance value models the agent's dedication to the 
      * organization.  Agents with higher allegiance are more likely to perform 
      * certain actions out of their devotion to the organization.  For young 
-     * contacts and recruits, the agent’s allegiance determines how much time a 
-     * recruiter has to spend with that agent testing the agent’s mettle for 
+     * contacts and recruits, the agent's allegiance determines how much time a 
+     * recruiter has to spend with that agent testing the agentï¿½s mettle for 
      * joining the organization.
      */
     private int allegiance;
     /**
-     * The agent’s Experience value models how skilled the agent is in 
+     * The agent's Experience value models how skilled the agent is in 
      * conducting terrorist-related activities.  For specialists, such as arms 
      * dealers, financiers, and logisticians, the experience value determines 
      * the departure point for how much of a resource the agent can produce in a
@@ -33,16 +33,16 @@ public class TerroristAgentPersonality implements Personality {
      */
     private int experience;
     /**
-     * The agent’s influence value is the ultimate determination of where the 
-     * agent falls in the organization’s pecking order.  Influence combines with 
+     * The agent's influence value is the ultimate determination of where the 
+     * agent falls in the organization's pecking order.  Influence combines with 
      * experience for leaders creating missions.  Influence is also used to 
      * determine whether or not an agent is willing to communication with 
      * another agent or is willing to pass on a message coming from another 
      * agent.  Influence and experience also combine together in the specialists
-     * to create the notion of status with respect to answer a leader’s request 
-     * for the specialist to provide a resource.  For instance, if the leader’s 
+     * to create the notion of status with respect to answer a leader's request 
+     * for the specialist to provide a resource.  For instance, if the leader's 
      * mission is below the stature of the specialist, then the specialist will 
-     * ignore the leader’s request.
+     * ignore the leader's request.
      */
     private int influence;
     
